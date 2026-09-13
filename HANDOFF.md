@@ -367,7 +367,8 @@ As of 2026-09-13 `src/user/data/stimulus_pool.json` is the v5 pool (byte-identic
 (`assets/main-C0VuXHPj.js` at that commit) contains the v5 expression `(9 × 2 + 4) - 1 + 8 ÷ 2 + 11`
 and none of the old pool's expressions.
 
-**Practice items (new 2026-09-13; NOT yet committed or deployed, update this line when they are).**
+**Practice items (new 2026-09-13; deployed and verified: commit 0abdf0c, deploy run 34778572392,
+live bundle `assets/main-CcKDMNvE.js` contains the new items and none of the old practice set).**
 `src/user/data/practice_items.json` is written by `base-task/practice.py`, which holds the three
 user-approved items verbatim and checks them against the model: not in the pool, one error at the
 declared step that reads as the true rule only, B statements pass the foil rules and the look-alike
@@ -401,7 +402,7 @@ https://www.codec-lab.org/divya603/bodmas-exp1-position/main/?PROLIFIC_PID={{%PR
 Test it end to end (confirm a `prolific_id` is recorded) before launching any batch.
 
 ### Checklist before running any participant
-- [ ] New form sampler + new pool (deployed and verified 2026-09-13) + new practice items (built 2026-09-13, not yet deployed) deployed, and the LIVE
+- [x] New form sampler + new pool + new practice items deployed (all verified 2026-09-13), and the LIVE
       bundle verified to contain the new pool (grep the deployed JS for a known new expression).
 - [ ] Prolific completion code in `ThanksView.vue` replaced with the new Prolific study's code.
 - [ ] Consent and debrief: `design.js` already points `consentPdfUrl` at `public/consent-form.pdf` and
