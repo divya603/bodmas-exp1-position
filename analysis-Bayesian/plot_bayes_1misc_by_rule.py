@@ -24,8 +24,10 @@ Two deliberate choices:
    marginal exceeds 0.35, so restricting to probed items would silently hide
    every hard case.
 2. **The excluded band is drawn.** Anything above 0.35 is shaded, because no
-   category-B item ever probes a foil in that band. For five rules the band is
-   empty. For `outside_bracket_first` it is not, and that asymmetry is the point.
+   category-B item ever probes a foil in that band. On the v5 pool four rules
+   never enter it and add<÷ and sub<× enter it once each, while
+   `outside_bracket_first` enters it on 40 of its 200 absent traces. That
+   asymmetry is the point.
 
 Stems sit on the exact observed values; heights are proportions WITHIN each
 (condition, position) group, so present and absent stay comparable despite the

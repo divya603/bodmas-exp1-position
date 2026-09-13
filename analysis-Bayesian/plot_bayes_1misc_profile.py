@@ -14,11 +14,12 @@ Companion to plot_bayes_1misc_by_rule.py, which is the transpose: that one asks
 "for rule X, present versus absent"; this one asks "for a trace containing X,
 what does the observer make of every rule at once".
 
-What it shows that no category A/B figure can: on 36 of 1200 (trace, absent
-rule) combinations an ABSENT rule scores above 0.35, and on 15 above 0.5
-(max 0.871). All 15 are outside_bracket_first, the one rule that removes rather
-than adds options, so a trace that never enters its bracket early reads as
-positive evidence FOR it. `pool.py: foil_options()` drops any foil above 0.35 as
+What it shows that no category A/B figure can: on the v5 pool, on 42 of 1200
+(trace, absent rule) combinations an ABSENT rule scores above 0.35, and on 27
+above 0.5 (max 0.871). All 27 are outside_bracket_first, the one rule that
+removes rather than adds options, so a trace that never enters its bracket
+early reads as positive evidence FOR it. The title computes these counts from
+the pool, so it cannot drift. `pool.py: foil_options()` drops any foil above 0.35 as
 "not a clean foil", so no category-B item ever probes one of these.
 
 Run from repo root:
@@ -87,12 +88,17 @@ def main():
                                        f'never used as a foil'))
     fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(0.5, 0.925),
                ncol=3, fontsize=8.5, frameon=False)
+    absent = [(v, q) for present in IDS for q, d in profile[present].items()
+              if q != present for vs in d.values() for v in vs]
+    over = [q for v, q in absent if v > 0.5]
+    over_rules = sorted({SHORT[q] for q in over})
     fig.suptitle('What the ideal observer extracts from a trace: ALL SIX marginals\n'
                  'The statement is never an input to inference, it only picks which entry gets '
                  'read. One dot per item, 40 per panel per rule.\n'
-                 'The present rule is pinned at 1.000. Absent rules mostly sit below 0.35, except '
-                 'outside(), which crosses 0.5 on 15 of 1200\ntrace-by-rule combinations '
-                 '(max 0.871). Those high-marginal foils are excluded from the pool, so no '
+                 f'The present rule is pinned at 1.000. Absent rules mostly sit below 0.35; '
+                 f'{len(over)} of {len(absent)} trace-by-rule combinations cross 0.5\n'
+                 f'(all {", ".join(over_rules)}; max {max(v for v, _ in absent):.3f}). '
+                 'Those high-marginal foils are excluded from the pool, so no '
                  'category-B item ever probes one.',
                  fontsize=10.5, y=0.995)
     fig.tight_layout(rect=[0, 0, 1, 0.86])

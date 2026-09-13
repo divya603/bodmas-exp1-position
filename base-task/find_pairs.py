@@ -1,12 +1,13 @@
 """
 find_pairs.py
 
-Search for v3 matched item pairs: one expression that yields BOTH a step-1 and
-a step-3 version of the same misconception, where each shown trace has exactly
-one expert-illegal move and passes validate_trace().
+pairs_for_expression() is the core trace finder the pool builder calls: for one
+expression and misconception it returns a qualifying trace at each requested
+error position (exactly one expert-illegal move, passes validate_trace()).
 
-This is the core sampler the v3 pool builder will call. Run directly to see
-per-misconception yields.
+Since v5 (2026-09-13) the pool uses ONE position per expression, so the matched
+pair search below (one expression yielding BOTH a step-1 and a step-3 version)
+is kept only for yield statistics. Run directly to see per-misconception yields.
 """
 
 import random

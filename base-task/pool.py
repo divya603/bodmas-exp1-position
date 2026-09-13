@@ -1,67 +1,73 @@
 """
 pool.py
 
-Builds the v4 "position x named" stimulus pool.
+Builds the v5 stimulus pool: 240 items, each on its own expression.
 
-v4 vs v3
---------
-v3 balanced B on (named foil x refutation status x position) and let the
-PRESENT rule fall where it may, which left 13 of the 30 present x named
-heatmap cells holding only one refutation status, so the status-split panels
-had holes. v4 makes the heatmap the thing that is balanced:
-
-  * refutation is NO LONGER A FACTOR. foil_status is still computed and stored
-    per item, but nothing is balanced on it. Consequence to respect: only the
-    COMBINED present x named heatmap is guaranteed full. Splitting it by
-    refutation status brings the v3 holes straight back.
-  * the named foil IS balanced within each present rule, which is what fills
-    the heatmap's columns.
+v5 vs v4 (changed 2026-09-13)
+-----------------------------
+  * No matched pairs. v4 took the step-1 and the step-3 version of an item from
+    ONE expression, so every expression appeared twice in the pool. In v5 every
+    item has its own expression, and error position is manipulated BETWEEN
+    expressions, held level by the cell counts below. The cost: a position
+    effect can now partly reflect which expressions support step 1 vs step 3,
+    which the matched design ruled out.
+  * The look-alike guard (lookalike.py). A B item may not name a rule whose
+    statement plainly describes the error step. Every outside_bracket_first
+    error is a + or - done before an adjacent × or ÷ whose other operand is a
+    bracket, which a reader would also call "addition before division" and so
+    on, although the model's operator rules cannot make that step. v4 had no
+    such item only by chance.
 
 Design
 ------
-Two categories, one misconception per trace, as in v3:
+Two categories, one misconception per trace:
   A - the statement NAMES the misconception in the trace   -> agree
   B - the statement names a FOIL                           -> disagree
 
-Grid, 240 items in 120 matched pairs:
+Grid, 240 items on 240 distinct expressions:
   A: present(6) x position(2)            = 12 cells x 10 items = 120
   B: present(6) x named(5) x position(2) = 60 cells x  2 items = 120
 
-So every rule is the true misconception in exactly 40 items (20 per position,
-half of them named and half foiled), and the present x named heatmap has 20 on
-each diagonal cell and 4 in each of the 30 off-diagonal cells. No empty boxes.
+So each of the four (category x position) pools the frontend samples from holds
+60 items, every rule is the true misconception in 40 items (10 per category x
+position), and the present x named heatmap has 20 on each diagonal cell and 4
+in each of the 30 off-diagonal cells.
 
-Matched pairs, as in v3: one expression supplies BOTH the step-1 and the step-3
-version of an item, so position is manipulated with expression structure held
-constant. This is why N_OPS is 6 and not 5 or 4. Measured over 2500 bracketed
-expressions, the number that support both step 1 and step 3 for
-outside_bracket_first is 0 at 4 ops, 0 at 5 ops, and 32 at 6 ops: at 4 ops that
-rule never reaches step 3 at all.
+A foil must pass two checks on the trace it is shown with:
+  * the observer check: its marginal is at most UNSUPPORTED_MAX (0.35). Above
+    that the trace positively supports the rule, so "disagree" is not a
+    defensible key.
+  * the look-alike guard above.
 
-A foil is only used when its refutation status is the SAME at both positions.
-Status is not a factor any more, but letting it flip inside a pair would put a
-nuisance difference between the two positions we are trying to compare. It
-costs about 7% of foil options, which is cheap insurance.
+student_name and belief_statement are placeholders: the frontend reassigns the
+24 names per participant (src/user/utils/sampleForm.js).
+
+N_OPS stays 6. It was forced by the matched pairs (no 5-op expression supports
+both step 1 and step 3 for outside_bracket_first); without pairs it is a choice.
 """
 
 import json
 import random
-from collections import Counter, defaultdict
+from collections import Counter
 from itertools import combinations
 
 from learner import MISCONCEPTION_FLIPS
 from inference import posterior_over_profiles, marginal_rule_probability
 from generator_constrained import generate_expression
 from find_pairs import pairs_for_expression, N_OPS, POSITIONS
+from lookalike import error_step_rules
 
 IDS        = list(MISCONCEPTION_FLIPS.keys())
 HYPOTHESES = [()] + [(m,) for m in IDS] + list(combinations(IDS, 2))
 
-A_PAIRS_PER_RULE = 10   # -> 20 A items per rule, 10 per position
-B_PAIRS_PER_CELL = 2    # per (present, named) -> 4 items, 2 per position
+A_PER_CELL = 10   # per (present, position)         -> 120 A items
+B_PER_CELL = 2    # per (present, named, position)  -> 120 B items
 
 REFUTED_MAX     = 0.15
 UNSUPPORTED_MAX = 0.35
+
+# a cell that cannot be filled stops the build after this many fruitless draws
+MAX_DRY_DRAWS = 300_000
 
 STATEMENT_TEMPLATES = {
     'add_before_mul':        "{name} believes addition should be done before multiplication.",
@@ -88,156 +94,139 @@ def _status(marginal):
     return 'high'
 
 
-def foil_options(pair):
+def foil_options(trace, true_m):
     """
-    {foil_rule: (status, {position: marginal})} for every rule other than the
-    true one whose status is identical at both positions and is not 'high'.
-    'high' means the trace positively supports the rule, so it is not a clean
-    foil; a status that flips between positions would unmatch the pair.
+    ({foil_rule: (status, marginal)}, [look-alikes dropped]) for the rules
+    other than true_m. A rule is an option when the trace does not support it
+    (status is not 'high') and its statement does not plainly describe the
+    error step (lookalike.py).
     """
-    true_m = pair['misconception']
-    post = {p: posterior_over_profiles(pair['traces'][p], profiles=HYPOTHESES)
-            for p in POSITIONS}
-    out = {}
+    post = posterior_over_profiles(trace, profiles=HYPOTHESES)
+    visible = error_step_rules(trace)
+    out, dropped = {}, []
     for f in IDS:
         if f == true_m:
             continue
-        marg = {p: marginal_rule_probability(post[p], f) for p in POSITIONS}
-        st = {p: _status(marg[p]) for p in POSITIONS}
-        if st[POSITIONS[0]] == st[POSITIONS[1]] and st[POSITIONS[0]] != 'high':
-            out[f] = (st[POSITIONS[0]], marg)
-    return out
-
-
-def draw_pair(misconception, rng, bracket_prob, max_draws=40_000):
-    """One matched pair for `misconception`, or None if the budget runs out."""
-    for _ in range(max_draws):
-        expr = generate_expression(n_ops=N_OPS, bracket_prob=bracket_prob, rng=rng)
-        if expr is None:
+        marg = marginal_rule_probability(post, f)
+        st = _status(marg)
+        if st == 'high':
             continue
-        got = pairs_for_expression(expr, misconception)
-        if all(p in got for p in POSITIONS):
-            return {'expression': expr, 'misconception': misconception,
-                    'traces': {p: got[p] for p in POSITIONS}}
-    return None
+        if f in visible:
+            dropped.append(f)
+            continue
+        out[f] = (st, marg)
+    return out, dropped
 
 
 def build(seed=2026, verbose=True):
     rng = random.Random(seed)
 
-    a_need = {m: A_PAIRS_PER_RULE for m in IDS}
-    b_need = {(p, f): B_PAIRS_PER_CELL for p in IDS for f in IDS if p != f}
-    a_pairs = defaultdict(list)
-    b_pairs = defaultdict(list)
+    a_need = {(m, p): A_PER_CELL for m in IDS for p in POSITIONS}
+    b_need = {(m, f, p): B_PER_CELL for m in IDS for f in IDS if f != m for p in POSITIONS}
+    chosen = []                 # (cell key, expression, trace, foil_status, marginal)
     seen_expressions = set()
     draws = Counter()
-    stalls = 0
+    guard_drops = Counter()     # (present, foil): traces the look-alike guard kept out of a cell
+    dry = 0
 
-    def still_needed():
-        return any(a_need.values()) or any(b_need.values())
+    def b_open(m, p):
+        return [f for f in IDS if b_need.get((m, f, p), 0) > 0]
 
-    while still_needed():
-        progressed = False
+    while any(a_need.values()) or any(b_need.values()):
         for m in IDS:
-            if not still_needed():
-                break
-            # This rule is done once its A quota and every B cell it can feed
-            # are full. B cells are keyed by PRESENT rule, so only rule m can
-            # fill the m-row of the heatmap.
-            row_need = sum(v for (p, _f), v in b_need.items() if p == m)
-            if a_need[m] == 0 and row_need == 0:
+            open_pos = tuple(p for p in POSITIONS if a_need[(m, p)] > 0 or b_open(m, p))
+            if not open_pos:
                 continue
 
             bp = 1.0 if m == 'outside_bracket_first' else 0.6
-            pair = draw_pair(m, rng, bp)
+            expr = generate_expression(n_ops=N_OPS, bracket_prob=bp, rng=rng)
             draws[m] += 1
-            if pair is None or pair['expression'] in seen_expressions:
-                continue
-
-            # An expression is used by exactly ONE pair, so a participant can
+            dry += 1
+            # An expression is used by exactly ONE item, so a participant can
             # never meet the same expression twice.
-            if a_need[m] > 0:
-                seen_expressions.add(pair['expression'])
-                a_pairs[m].append(pair)
-                a_need[m] -= 1
-                progressed = True
+            if expr is None or expr in seen_expressions:
                 continue
 
-            opts = foil_options(pair)
-            wanted = [f for f in opts if b_need.get((m, f), 0) > 0]
-            if not wanted:
+            # Every cell this expression could fill, scored by the share of
+            # that cell still empty, so the scarcest cell wins (ties random).
+            slots = []
+            for p, trace in sorted(pairs_for_expression(expr, m, positions=open_pos).items()):
+                if a_need[(m, p)] > 0:
+                    slots.append((a_need[(m, p)] / A_PER_CELL, rng.random(),
+                                  ('A', m, m, p), trace, None, None))
+                wanted = b_open(m, p)
+                if not wanted:
+                    continue
+                opts, dropped = foil_options(trace, m)
+                for f in wanted:
+                    if f in dropped:
+                        guard_drops[(m, f)] += 1
+                    if f in opts:
+                        st, marg = opts[f]
+                        slots.append((b_need[(m, f, p)] / B_PER_CELL, rng.random(),
+                                      ('B', m, f, p), trace, st, marg))
+            if not slots:
                 continue
-            f = max(wanted, key=lambda k: b_need[(m, k)])   # scarcest cell first
-            seen_expressions.add(pair['expression'])
-            b_pairs[(m, f)].append((pair, opts[f][0], opts[f][1]))
-            b_need[(m, f)] -= 1
-            progressed = True
+
+            _, _, key, trace, st, marg = max(slots, key=lambda s: s[:2])
+            cat, _, f, p = key
+            if cat == 'A':
+                a_need[(m, p)] -= 1
+            else:
+                b_need[(m, f, p)] -= 1
+            seen_expressions.add(expr)
+            chosen.append((key, expr, trace, st, marg))
+            dry = 0
 
         if verbose:
-            print(f"  remaining pairs: A={sum(a_need.values()):3d}  "
+            print(f"  remaining items: A={sum(a_need.values()):3d}  "
                   f"B={sum(b_need.values()):3d}", end='\r')
-        if not progressed:
-            stalls += 1
-            if stalls > 50:
-                missing = {k: v for k, v in b_need.items() if v} | \
-                          {k: v for k, v in a_need.items() if v}
-                raise SystemExit(f"\nstalled with cells unfilled: {missing}")
-        else:
-            stalls = 0
+        if dry > MAX_DRY_DRAWS:
+            missing = {k: v for k, v in b_need.items() if v} | \
+                      {k: v for k, v in a_need.items() if v}
+            raise SystemExit(f"\nstalled with cells unfilled: {missing}")
 
     if verbose:
         print(f"  generated {len(seen_expressions)} expressions "
-              f"({sum(draws.values())} pair draws)              ")
+              f"({sum(draws.values())} draws)              ")
+        print(f"  look-alike guard kept a trace out of a B cell {sum(guard_drops.values())} times: "
+              f"{dict(guard_drops)}")
 
-    # emit items
-    items, pair_no = [], 0
-
-    def emit(pair, probed, correct, foil_status=None, marginals=None):
-        nonlocal pair_no
-        pid = f"P{pair_no:03d}"
-        pair_no += 1
-        for pos in POSITIONS:
-            name = STUDENT_NAMES[len(items) % len(STUDENT_NAMES)]
-            it = {
-                'id':                   f"{'A' if correct else 'B'}{len(items):03d}",
-                'pair_id':              pid,
-                'category':             'A' if correct else 'B',
-                'error_position':       pos,
-                'expression':           pair['expression'],
-                'n_ops':                N_OPS,
-                'misconceptions':       [pair['misconception']],
-                'num_misconceptions':   1,
-                'trace':                pair['traces'][pos],
-                'probed_misconception': probed,
-                'statement_correct':    correct,
-                'which_target':         None,   # schema compatibility; C/D are gone
-                'student_name':         name,
-                'belief_statement':     STATEMENT_TEMPLATES[probed].format(name=name),
-            }
-            if foil_status:
-                # recorded, NOT balanced: see the module docstring
-                it['foil_status']      = foil_status
-                it['io_foil_marginal'] = round(marginals[pos], 4)
-            items.append(it)
-
-    for m in IDS:
-        for pair in a_pairs[m]:
-            emit(pair, m, True)
-    for (present, f), lst in b_pairs.items():
-        for pair, st, marg in lst:
-            emit(pair, f, False, st, marg)
-
+    # emit items: A then B, each ordered by present rule, named rule, position
+    order = {m: i for i, m in enumerate(IDS)}
+    chosen.sort(key=lambda c: (c[0][0], order[c[0][1]], order[c[0][2]], c[0][3]))
+    items = []
+    for (cat, m, probed, p), expr, trace, st, marg in chosen:
+        name = STUDENT_NAMES[len(items) % len(STUDENT_NAMES)]
+        it = {
+            'id':                   f"{cat}{len(items):03d}",
+            'category':             cat,
+            'error_position':       p,
+            'expression':           expr,
+            'n_ops':                N_OPS,
+            'misconceptions':       [m],
+            'num_misconceptions':   1,
+            'trace':                trace,
+            'probed_misconception': probed,
+            'statement_correct':    cat == 'A',
+            'student_name':         name,
+            'belief_statement':     STATEMENT_TEMPLATES[probed].format(name=name),
+        }
+        if cat == 'B':
+            # recorded, NOT balanced: see the module docstring
+            it['foil_status']      = st
+            it['io_foil_marginal'] = round(marg, 4)
+        items.append(it)
     return items
 
 
 def summarise(items):
-    print(f"\n{len(items)} items, {len({i['pair_id'] for i in items})} matched pairs, "
-          f"{len({i['expression'] for i in items})} distinct expressions")
-    print("  category x position:",
+    print(f"\n{len(items)} items, {len({i['expression'] for i in items})} distinct expressions")
+    print("  sampling pools (category x position), want 60 each:",
           dict(Counter((i['category'], i['error_position']) for i in items)))
     print("  trace lengths:", dict(Counter(len(i['trace']) for i in items)))
 
-    print(f"\n  items per PRESENT rule (want 40: 20 per position, 20 A / 20 B):")
+    print(f"\n  items per PRESENT rule (want 40: 10 per category x position):")
     for m in IDS:
         sub = [i for i in items if i['misconceptions'][0] == m]
         c = Counter((i['category'], i['error_position']) for i in sub)
@@ -264,9 +253,13 @@ def summarise(items):
         print(f"    {f:24s} refuted={per[(f,'refuted')]:2d}  "
               f"unsupported={per[(f,'unsupported')]:2d}")
 
+    look = [i['id'] for i in items if i['category'] == 'B'
+            and i['probed_misconception'] in error_step_rules(i['trace'])]
+    print(f"\n  B items naming a look-alike foil (want 0): {len(look)}")
+
 
 if __name__ == '__main__':
-    print("Building v4 pool...")
+    print("Building v5 pool...")
     items = build()
     summarise(items)
     with open('stimulus_pool.json', 'w', encoding='utf-8') as fh:

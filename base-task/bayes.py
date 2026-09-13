@@ -1,8 +1,8 @@
 """
 bayes.py
 
-Runs the ideal observer over every item in the v4 pool and saves its response,
-the v4 replacement for analysis-Bayesian/b_item_marginals.json.
+Runs the ideal observer over every item in the pool (v5: 240 items, each on its
+own expression) and saves its response to bayes_per_item.json.
 
 For each item the observer sees only what a participant sees (the trace) and
 scores the probed rule under the 22 hypotheses (expert + 6 singletons +
@@ -11,7 +11,7 @@ is the marginal probability that the student holds the named rule; the binary
 judgment collapses that at 0.5, matching how human ratings are collapsed
 (>=4 on the 1-6 scale = agree).
 
-v4 note: refutation is no longer a design factor. foil_status is still
+Refutation is not a design factor. foil_status is still
 computed and reported here, but nothing is balanced on it, so the per-status
 cells are lopsided (outside_bracket_first runs about 2 refuted to 18
 unsupported). Treat the status breakdown as descriptive, not as a contrast.
@@ -44,7 +44,6 @@ def run(pool_path=POOL, out_path=OUT):
         marg = marginal_rule_probability(post, it['probed_misconception'])
         rows.append({
             'id':                   it['id'],
-            'pair_id':              it['pair_id'],
             'category':             it['category'],
             'error_position':       it['error_position'],
             'true_misconception':   it['misconceptions'][0],

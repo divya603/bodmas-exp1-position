@@ -1,7 +1,6 @@
 [
  {
   "id": "A000",
-  "pair_id": "P000",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -12,16 +11,14 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.473684
+  "map_posterior": 0.333333
  },
  {
   "id": "A001",
-  "pair_id": "P000",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "add_before_mul",
   "probed_misconception": "add_before_mul",
   "foil_status": null,
@@ -36,7 +33,6 @@
  },
  {
   "id": "A002",
-  "pair_id": "P001",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -47,30 +43,13 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul"
+   "add_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.666667
  },
  {
   "id": "A003",
-  "pair_id": "P001",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "A004",
-  "pair_id": "P002",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -86,10 +65,26 @@
   "map_posterior": 0.25
  },
  {
-  "id": "A005",
-  "pair_id": "P002",
+  "id": "A004",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.571429
+ },
+ {
+  "id": "A005",
+  "category": "A",
+  "error_position": 1,
   "true_misconception": "add_before_mul",
   "probed_misconception": "add_before_mul",
   "foil_status": null,
@@ -104,7 +99,23 @@
  },
  {
   "id": "A006",
-  "pair_id": "P003",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.692308
+ },
+ {
+  "id": "A007",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -117,28 +128,10 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A007",
-  "pair_id": "P003",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
  },
  {
   "id": "A008",
-  "pair_id": "P004",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -155,24 +148,6 @@
  },
  {
   "id": "A009",
-  "pair_id": "P004",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A010",
-  "pair_id": "P005",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -189,8 +164,23 @@
   "map_posterior": 0.529412
  },
  {
+  "id": "A010",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
   "id": "A011",
-  "pair_id": "P005",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_mul",
@@ -207,25 +197,6 @@
  },
  {
   "id": "A012",
-  "pair_id": "P006",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.627907
- },
- {
-  "id": "A013",
-  "pair_id": "P006",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_mul",
@@ -242,10 +213,9 @@
   "map_posterior": 0.692308
  },
  {
-  "id": "A014",
-  "pair_id": "P007",
+  "id": "A013",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "add_before_mul",
   "probed_misconception": "add_before_mul",
   "foil_status": null,
@@ -256,11 +226,26 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.5
+ },
+ {
+  "id": "A014",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
  },
  {
   "id": "A015",
-  "pair_id": "P007",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_mul",
@@ -277,24 +262,6 @@
  },
  {
   "id": "A016",
-  "pair_id": "P008",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A017",
-  "pair_id": "P008",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_mul",
@@ -307,13 +274,28 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A017",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.333333
  },
  {
   "id": "A018",
-  "pair_id": "P009",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "add_before_mul",
   "probed_misconception": "add_before_mul",
   "foil_status": null,
@@ -328,7 +310,6 @@
  },
  {
   "id": "A019",
-  "pair_id": "P009",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_mul",
@@ -341,11 +322,10 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "A020",
-  "pair_id": "P010",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_div",
@@ -362,58 +342,6 @@
  },
  {
   "id": "A021",
-  "pair_id": "P010",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A022",
-  "pair_id": "P011",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "A023",
-  "pair_id": "P011",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "A024",
-  "pair_id": "P012",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_div",
@@ -429,10 +357,58 @@
   "map_posterior": 0.2
  },
  {
-  "id": "A025",
-  "pair_id": "P012",
+  "id": "A022",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.473684
+ },
+ {
+  "id": "A023",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A024",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A025",
+  "category": "A",
+  "error_position": 1,
   "true_misconception": "add_before_div",
   "probed_misconception": "add_before_div",
   "foil_status": null,
@@ -447,41 +423,6 @@
  },
  {
   "id": "A026",
-  "pair_id": "P013",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A027",
-  "pair_id": "P013",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A028",
-  "pair_id": "P014",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_div",
@@ -495,13 +436,44 @@
    "add_before_div",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.529412
+  "map_posterior": 0.705882
+ },
+ {
+  "id": "A027",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.5
+ },
+ {
+  "id": "A028",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
  },
  {
   "id": "A029",
-  "pair_id": "P014",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "add_before_div",
   "probed_misconception": "add_before_div",
   "foil_status": null,
@@ -516,9 +488,8 @@
  },
  {
   "id": "A030",
-  "pair_id": "P015",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "add_before_div",
   "probed_misconception": "add_before_div",
   "foil_status": null,
@@ -533,7 +504,6 @@
  },
  {
   "id": "A031",
-  "pair_id": "P015",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_div",
@@ -550,9 +520,56 @@
  },
  {
   "id": "A032",
-  "pair_id": "P016",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A033",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A034",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.166667
+ },
+ {
+  "id": "A035",
+  "category": "A",
+  "error_position": 3,
   "true_misconception": "add_before_div",
   "probed_misconception": "add_before_div",
   "foil_status": null,
@@ -564,79 +581,10 @@
    "add_before_div",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.473684
- },
- {
-  "id": "A033",
-  "pair_id": "P016",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A034",
-  "pair_id": "P017",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A035",
-  "pair_id": "P017",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
+  "map_posterior": 0.842105
  },
  {
   "id": "A036",
-  "pair_id": "P018",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A037",
-  "pair_id": "P018",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_div",
@@ -649,13 +597,28 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A037",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.5
  },
  {
   "id": "A038",
-  "pair_id": "P019",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "add_before_div",
   "probed_misconception": "add_before_div",
   "foil_status": null,
@@ -670,7 +633,6 @@
  },
  {
   "id": "A039",
-  "pair_id": "P019",
   "category": "A",
   "error_position": 3,
   "true_misconception": "add_before_div",
@@ -681,14 +643,12 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
+   "add_before_div"
   ],
-  "map_posterior": 0.428571
+  "map_posterior": 0.25
  },
  {
   "id": "A040",
-  "pair_id": "P020",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_mul",
@@ -702,28 +662,10 @@
    "sub_before_mul",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.75
+  "map_posterior": 0.571429
  },
  {
   "id": "A041",
-  "pair_id": "P020",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "A042",
-  "pair_id": "P021",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_mul",
@@ -739,10 +681,9 @@
   "map_posterior": 0.25
  },
  {
-  "id": "A043",
-  "pair_id": "P021",
+  "id": "A042",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "sub_before_mul",
   "foil_status": null,
@@ -753,11 +694,27 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
+ },
+ {
+  "id": "A043",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.529412
  },
  {
   "id": "A044",
-  "pair_id": "P022",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_mul",
@@ -774,24 +731,6 @@
  },
  {
   "id": "A045",
-  "pair_id": "P022",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A046",
-  "pair_id": "P023",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_mul",
@@ -804,13 +743,12 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
-  "id": "A047",
-  "pair_id": "P023",
+  "id": "A046",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "sub_before_mul",
   "foil_status": null,
@@ -821,11 +759,10 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
-  "id": "A048",
-  "pair_id": "P024",
+  "id": "A047",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_mul",
@@ -841,10 +778,9 @@
   "map_posterior": 0.333333
  },
  {
-  "id": "A049",
-  "pair_id": "P024",
+  "id": "A048",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "sub_before_mul",
   "foil_status": null,
@@ -855,13 +791,29 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A049",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.473684
  },
  {
   "id": "A050",
-  "pair_id": "P025",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "sub_before_mul",
   "foil_status": null,
@@ -876,7 +828,38 @@
  },
  {
   "id": "A051",
-  "pair_id": "P025",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A052",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A053",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_mul",
@@ -892,25 +875,7 @@
   "map_posterior": 0.333333
  },
  {
-  "id": "A052",
-  "pair_id": "P026",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.5
- },
- {
-  "id": "A053",
-  "pair_id": "P026",
+  "id": "A054",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_mul",
@@ -921,31 +886,12 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.692308
- },
- {
-  "id": "A054",
-  "pair_id": "P027",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "A055",
-  "pair_id": "P027",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_mul",
@@ -958,28 +904,10 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "A056",
-  "pair_id": "P028",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A057",
-  "pair_id": "P028",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_mul",
@@ -992,13 +920,28 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A057",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.333333
  },
  {
   "id": "A058",
-  "pair_id": "P029",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "sub_before_mul",
   "foil_status": null,
@@ -1013,7 +956,6 @@
  },
  {
   "id": "A059",
-  "pair_id": "P029",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_mul",
@@ -1026,11 +968,10 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 1.0
  },
  {
   "id": "A060",
-  "pair_id": "P030",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_div",
@@ -1041,16 +982,14 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div",
-   "outside_bracket_first"
+   "sub_before_div"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.333333
  },
  {
   "id": "A061",
-  "pair_id": "P030",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "sub_before_div",
   "probed_misconception": "sub_before_div",
   "foil_status": null,
@@ -1065,7 +1004,6 @@
  },
  {
   "id": "A062",
-  "pair_id": "P031",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_div",
@@ -1078,13 +1016,12 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A063",
-  "pair_id": "P031",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "sub_before_div",
   "probed_misconception": "sub_before_div",
   "foil_status": null,
@@ -1093,13 +1030,30 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "sub_before_div",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.705882
  },
  {
   "id": "A064",
-  "pair_id": "P032",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.6
+ },
+ {
+  "id": "A065",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_div",
@@ -1112,28 +1066,10 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "A065",
-  "pair_id": "P032",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A066",
-  "pair_id": "P033",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_div",
@@ -1150,9 +1086,8 @@
  },
  {
   "id": "A067",
-  "pair_id": "P033",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "sub_before_div",
   "probed_misconception": "sub_before_div",
   "foil_status": null,
@@ -1161,13 +1096,13 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "sub_before_div",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.529412
  },
  {
   "id": "A068",
-  "pair_id": "P034",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_div",
@@ -1178,13 +1113,29 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "sub_before_div",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.842105
  },
  {
   "id": "A069",
-  "pair_id": "P034",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A070",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_div",
@@ -1200,25 +1151,7 @@
   "map_posterior": 0.5
  },
  {
-  "id": "A070",
-  "pair_id": "P035",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.2
- },
- {
   "id": "A071",
-  "pair_id": "P035",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_div",
@@ -1231,13 +1164,12 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A072",
-  "pair_id": "P036",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "sub_before_div",
   "foil_status": null,
@@ -1252,7 +1184,6 @@
  },
  {
   "id": "A073",
-  "pair_id": "P036",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_div",
@@ -1265,13 +1196,12 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A074",
-  "pair_id": "P037",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "sub_before_div",
   "foil_status": null,
@@ -1286,7 +1216,6 @@
  },
  {
   "id": "A075",
-  "pair_id": "P037",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_div",
@@ -1303,9 +1232,8 @@
  },
  {
   "id": "A076",
-  "pair_id": "P038",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "sub_before_div",
   "foil_status": null,
@@ -1320,7 +1248,6 @@
  },
  {
   "id": "A077",
-  "pair_id": "P038",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_div",
@@ -1333,13 +1260,12 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 1.0
+  "map_posterior": 0.333333
  },
  {
   "id": "A078",
-  "pair_id": "P039",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "sub_before_div",
   "foil_status": null,
@@ -1354,7 +1280,6 @@
  },
  {
   "id": "A079",
-  "pair_id": "P039",
   "category": "A",
   "error_position": 3,
   "true_misconception": "sub_before_div",
@@ -1371,7 +1296,6 @@
  },
  {
   "id": "A080",
-  "pair_id": "P040",
   "category": "A",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
@@ -1388,93 +1312,6 @@
  },
  {
   "id": "A081",
-  "pair_id": "P040",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A082",
-  "pair_id": "P041",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A083",
-  "pair_id": "P041",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A084",
-  "pair_id": "P042",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.5
- },
- {
-  "id": "A085",
-  "pair_id": "P042",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A086",
-  "pair_id": "P043",
   "category": "A",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
@@ -1491,26 +1328,7 @@
   "map_posterior": 0.516129
  },
  {
-  "id": "A087",
-  "pair_id": "P043",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.615385
- },
- {
-  "id": "A088",
-  "pair_id": "P044",
+  "id": "A082",
   "category": "A",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
@@ -1524,13 +1342,12 @@
    "same_priority_rtl",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.529412
+  "map_posterior": 0.473684
  },
  {
-  "id": "A089",
-  "pair_id": "P044",
+  "id": "A083",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "same_priority_rtl",
   "foil_status": null,
@@ -1539,13 +1356,13 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "same_priority_rtl",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.818182
  },
  {
-  "id": "A090",
-  "pair_id": "P045",
+  "id": "A084",
   "category": "A",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
@@ -1561,8 +1378,88 @@
   "map_posterior": 0.25
  },
  {
-  "id": "A091",
-  "pair_id": "P045",
+  "id": "A085",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "A086",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.571429
+ },
+ {
+  "id": "A087",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A088",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A089",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "A090",
   "category": "A",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
@@ -1576,27 +1473,25 @@
    "same_priority_rtl"
   ],
   "map_posterior": 0.333333
+ },
+ {
+  "id": "A091",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.2
  },
  {
   "id": "A092",
-  "pair_id": "P046",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A093",
-  "pair_id": "P046",
   "category": "A",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
@@ -1609,13 +1504,12 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
-  "id": "A094",
-  "pair_id": "P047",
+  "id": "A093",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "same_priority_rtl",
   "foil_status": null,
@@ -1629,8 +1523,24 @@
   "map_posterior": 0.333333
  },
  {
+  "id": "A094",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.666667
+ },
+ {
   "id": "A095",
-  "pair_id": "P047",
   "category": "A",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
@@ -1647,9 +1557,8 @@
  },
  {
   "id": "A096",
-  "pair_id": "P048",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "same_priority_rtl",
   "foil_status": null,
@@ -1660,11 +1569,26 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A097",
-  "pair_id": "P048",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A098",
   "category": "A",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
@@ -1680,25 +1604,7 @@
   "map_posterior": 0.333333
  },
  {
-  "id": "A098",
-  "pair_id": "P049",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.25
- },
- {
   "id": "A099",
-  "pair_id": "P049",
   "category": "A",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
@@ -1715,7 +1621,6 @@
  },
  {
   "id": "A100",
-  "pair_id": "P050",
   "category": "A",
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
@@ -1732,9 +1637,8 @@
  },
  {
   "id": "A101",
-  "pair_id": "P050",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "outside_bracket_first",
   "foil_status": null,
@@ -1745,11 +1649,10 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.166667
  },
  {
   "id": "A102",
-  "pair_id": "P051",
   "category": "A",
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
@@ -1762,13 +1665,12 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A103",
-  "pair_id": "P051",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "outside_bracket_first",
   "foil_status": null,
@@ -1779,11 +1681,10 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A104",
-  "pair_id": "P052",
   "category": "A",
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
@@ -1796,28 +1697,10 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A105",
-  "pair_id": "P052",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A106",
-  "pair_id": "P053",
   "category": "A",
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
@@ -1833,10 +1716,9 @@
   "map_posterior": 0.2
  },
  {
-  "id": "A107",
-  "pair_id": "P053",
+  "id": "A106",
   "category": "A",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "outside_bracket_first",
   "foil_status": null,
@@ -1847,11 +1729,26 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A107",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.25
  },
  {
   "id": "A108",
-  "pair_id": "P054",
   "category": "A",
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
@@ -1868,24 +1765,6 @@
  },
  {
   "id": "A109",
-  "pair_id": "P054",
-  "category": "A",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "A110",
-  "pair_id": "P055",
   "category": "A",
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
@@ -1901,8 +1780,23 @@
   "map_posterior": 0.25
  },
  {
+  "id": "A110",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.2
+ },
+ {
   "id": "A111",
-  "pair_id": "P055",
   "category": "A",
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
@@ -1919,9 +1813,8 @@
  },
  {
   "id": "A112",
-  "pair_id": "P056",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "outside_bracket_first",
   "foil_status": null,
@@ -1932,11 +1825,26 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.166667
+  "map_posterior": 0.333333
  },
  {
   "id": "A113",
-  "pair_id": "P056",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A114",
   "category": "A",
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
@@ -1952,25 +1860,7 @@
   "map_posterior": 0.166667
  },
  {
-  "id": "A114",
-  "pair_id": "P057",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
   "id": "A115",
-  "pair_id": "P057",
   "category": "A",
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
@@ -1983,28 +1873,10 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A116",
-  "pair_id": "P058",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "A117",
-  "pair_id": "P058",
   "category": "A",
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
@@ -2017,13 +1889,28 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A117",
+  "category": "A",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.333333
  },
  {
   "id": "A118",
-  "pair_id": "P059",
   "category": "A",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "outside_bracket_first",
   "foil_status": null,
@@ -2038,7 +1925,6 @@
  },
  {
   "id": "A119",
-  "pair_id": "P059",
   "category": "A",
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
@@ -2055,128 +1941,1024 @@
  },
  {
   "id": "B120",
-  "pair_id": "P060",
   "category": "B",
   "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.2,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul"
+   "add_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
  },
  {
   "id": "B121",
-  "pair_id": "P060",
   "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_mul",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_div",
   "foil_status": "unsupported",
   "statement_correct": false,
   "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul"
+   "add_before_mul"
   ],
   "map_posterior": 0.2
  },
  {
   "id": "B122",
-  "pair_id": "P061",
   "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.096774,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.516129
+  "map_posterior": 0.25
  },
  {
   "id": "B123",
-  "pair_id": "P061",
   "category": "B",
   "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.076923,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.615385
+  "map_posterior": 0.25
  },
  {
   "id": "B124",
-  "pair_id": "P062",
   "category": "B",
   "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "add_before_mul",
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_mul",
   "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.125,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "add_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.5
  },
  {
   "id": "B125",
-  "pair_id": "P062",
   "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "add_before_mul",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_mul",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "add_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.727273
  },
  {
   "id": "B126",
-  "pair_id": "P063",
   "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "add_before_mul",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_mul",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "add_before_mul"
   ],
   "map_posterior": 0.25
  },
  {
   "id": "B127",
-  "pair_id": "P063",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B128",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B129",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B130",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B131",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B132",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B133",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B134",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B135",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B136",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B137",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B138",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B139",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B140",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.529412
+ },
+ {
+  "id": "B141",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B142",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.4
+ },
+ {
+  "id": "B143",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B144",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.083333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.666667
+ },
+ {
+  "id": "B145",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.032258,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.870968
+ },
+ {
+  "id": "B146",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B147",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B148",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.083333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.666667
+ },
+ {
+  "id": "B149",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B150",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B151",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B152",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B153",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B154",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B155",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B156",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B157",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B158",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B159",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B160",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B161",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B162",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B163",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.5
+ },
+ {
+  "id": "B164",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B165",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.083333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.75
+ },
+ {
+  "id": "B166",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B167",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B168",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.1,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.6
+ },
+ {
+  "id": "B169",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.4
+ },
+ {
+  "id": "B170",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B171",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B172",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B173",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B174",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B175",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B176",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B177",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B178",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B179",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B180",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B181",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B182",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B183",
   "category": "B",
   "error_position": 3,
   "true_misconception": "sub_before_div",
@@ -2189,45 +2971,267 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
-  "id": "B128",
-  "pair_id": "P064",
+  "id": "B184",
   "category": "B",
   "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "sub_before_div"
   ],
   "map_posterior": 0.25
  },
  {
-  "id": "B129",
-  "pair_id": "P064",
+  "id": "B185",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B186",
   "category": "B",
   "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "add_before_mul",
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "add_before_div",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "sub_before_div"
   ],
   "map_posterior": 0.25
  },
  {
-  "id": "B130",
-  "pair_id": "P065",
+  "id": "B187",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B188",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B189",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B190",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B191",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B192",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.105263,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.473684
+ },
+ {
+  "id": "B193",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B194",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B195",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B196",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B197",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B198",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B199",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B200",
   "category": "B",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
@@ -2241,11 +3245,26 @@
    "same_priority_rtl",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.529412
  },
  {
-  "id": "B131",
-  "pair_id": "P065",
+  "id": "B201",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B202",
   "category": "B",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
@@ -2261,11 +3280,10 @@
   "map_posterior": 0.25
  },
  {
-  "id": "B132",
-  "pair_id": "P066",
+  "id": "B203",
   "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_mul",
   "foil_status": "refuted",
   "statement_correct": false,
@@ -2273,67 +3291,31 @@
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "outside_bracket_first"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
-  "id": "B133",
-  "pair_id": "P066",
+  "id": "B204",
   "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "add_before_mul",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "add_before_div",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "outside_bracket_first"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
-  "id": "B134",
-  "pair_id": "P067",
+  "id": "B205",
   "category": "B",
   "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.166667,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.166667
- },
- {
-  "id": "B135",
-  "pair_id": "P067",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.166667,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.166667
- },
- {
-  "id": "B136",
-  "pair_id": "P068",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
+  "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_div",
   "foil_status": "refuted",
   "statement_correct": false,
@@ -2341,1432 +3323,225 @@
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul",
+   "same_priority_rtl",
    "outside_bracket_first"
   ],
   "map_posterior": 0.473684
  },
  {
-  "id": "B137",
-  "pair_id": "P068",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B138",
-  "pair_id": "P069",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B139",
-  "pair_id": "P069",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B140",
-  "pair_id": "P070",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B141",
-  "pair_id": "P070",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B142",
-  "pair_id": "P071",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B143",
-  "pair_id": "P071",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B144",
-  "pair_id": "P072",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B145",
-  "pair_id": "P072",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B146",
-  "pair_id": "P073",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B147",
-  "pair_id": "P073",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B148",
-  "pair_id": "P074",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B149",
-  "pair_id": "P074",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B150",
-  "pair_id": "P075",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B151",
-  "pair_id": "P075",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B152",
-  "pair_id": "P076",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B153",
-  "pair_id": "P076",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B154",
-  "pair_id": "P077",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.166667,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.166667
- },
- {
-  "id": "B155",
-  "pair_id": "P077",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.166667,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.166667
- },
- {
-  "id": "B156",
-  "pair_id": "P078",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B157",
-  "pair_id": "P078",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B158",
-  "pair_id": "P079",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B159",
-  "pair_id": "P079",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.571429
- },
- {
-  "id": "B160",
-  "pair_id": "P080",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.529412
- },
- {
-  "id": "B161",
-  "pair_id": "P080",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B162",
-  "pair_id": "P081",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B163",
-  "pair_id": "P081",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B164",
-  "pair_id": "P082",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B165",
-  "pair_id": "P082",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B166",
-  "pair_id": "P083",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B167",
-  "pair_id": "P083",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B168",
-  "pair_id": "P084",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B169",
-  "pair_id": "P084",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B170",
-  "pair_id": "P085",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B171",
-  "pair_id": "P085",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B172",
-  "pair_id": "P086",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.5
- },
- {
-  "id": "B173",
-  "pair_id": "P086",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.5
- },
- {
-  "id": "B174",
-  "pair_id": "P087",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B175",
-  "pair_id": "P087",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B176",
-  "pair_id": "P088",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B177",
-  "pair_id": "P088",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B178",
-  "pair_id": "P089",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B179",
-  "pair_id": "P089",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B180",
-  "pair_id": "P090",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B181",
-  "pair_id": "P090",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B182",
-  "pair_id": "P091",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B183",
-  "pair_id": "P091",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B184",
-  "pair_id": "P092",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B185",
-  "pair_id": "P092",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B186",
-  "pair_id": "P093",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B187",
-  "pair_id": "P093",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.428571
- },
- {
-  "id": "B188",
-  "pair_id": "P094",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B189",
-  "pair_id": "P094",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B190",
-  "pair_id": "P095",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B191",
-  "pair_id": "P095",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B192",
-  "pair_id": "P096",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B193",
-  "pair_id": "P096",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B194",
-  "pair_id": "P097",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B195",
-  "pair_id": "P097",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B196",
-  "pair_id": "P098",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.5
- },
- {
-  "id": "B197",
-  "pair_id": "P098",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.5
- },
- {
-  "id": "B198",
-  "pair_id": "P099",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B199",
-  "pair_id": "P099",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B200",
-  "pair_id": "P100",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B201",
-  "pair_id": "P100",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B202",
-  "pair_id": "P101",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B203",
-  "pair_id": "P101",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B204",
-  "pair_id": "P102",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B205",
-  "pair_id": "P102",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.25
- },
- {
   "id": "B206",
-  "pair_id": "P103",
   "category": "B",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.333333,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.333333
  },
  {
   "id": "B207",
-  "pair_id": "P103",
   "category": "B",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.333333,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.333333
  },
  {
   "id": "B208",
-  "pair_id": "P104",
   "category": "B",
   "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B209",
-  "pair_id": "P104",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B210",
-  "pair_id": "P105",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B211",
-  "pair_id": "P105",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B212",
-  "pair_id": "P106",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B213",
-  "pair_id": "P106",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B214",
-  "pair_id": "P107",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B215",
-  "pair_id": "P107",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.5
- },
- {
-  "id": "B216",
-  "pair_id": "P108",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
+  "true_misconception": "same_priority_rtl",
   "probed_misconception": "sub_before_mul",
   "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.111111,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div",
+   "same_priority_rtl",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.666667
+ },
+ {
+  "id": "B209",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.090909,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl",
    "outside_bracket_first"
   ],
   "map_posterior": 0.727273
  },
  {
-  "id": "B217",
-  "pair_id": "P108",
+  "id": "B210",
   "category": "B",
   "error_position": 3,
-  "true_misconception": "add_before_div",
+  "true_misconception": "same_priority_rtl",
   "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B211",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B212",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "sub_before_div",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B213",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B214",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B215",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B216",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B217",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.333333
  },
  {
   "id": "B218",
-  "pair_id": "P109",
   "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_mul",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "outside_bracket_first",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.166667,
+  "probed_marginal": 0.333333,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.166667
+  "map_posterior": 0.333333
  },
  {
   "id": "B219",
-  "pair_id": "P109",
   "category": "B",
   "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.166667,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.166667
- },
- {
-  "id": "B220",
-  "pair_id": "P110",
-  "category": "B",
-  "error_position": 1,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "outside_bracket_first",
   "foil_status": "unsupported",
@@ -3776,118 +3551,286 @@
   "observer_correct": true,
   "map_profile": [
    "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B220",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
   ],
   "map_posterior": 0.25
  },
  {
   "id": "B221",
-  "pair_id": "P110",
   "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B222",
-  "pair_id": "P111",
   "category": "B",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "outside_bracket_first"
   ],
   "map_posterior": 0.25
  },
  {
   "id": "B223",
-  "pair_id": "P111",
   "category": "B",
   "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B224",
-  "pair_id": "P112",
   "category": "B",
   "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.870968
+  "map_posterior": 0.2
  },
  {
   "id": "B225",
-  "pair_id": "P112",
   "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "same_priority_rtl",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_div",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div"
+   "outside_bracket_first"
   ],
   "map_posterior": 0.25
  },
  {
   "id": "B226",
-  "pair_id": "P113",
   "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "same_priority_rtl",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_div",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div"
+   "outside_bracket_first"
   ],
   "map_posterior": 0.25
  },
  {
   "id": "B227",
-  "pair_id": "P113",
   "category": "B",
   "error_position": 3,
-  "true_misconception": "add_before_div",
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B228",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B229",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B230",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B231",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B232",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B233",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B234",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B235",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B236",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B237",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
   "probed_misconception": "same_priority_rtl",
   "foil_status": "refuted",
   "statement_correct": false,
@@ -3895,212 +3838,40 @@
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div"
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B228",
-  "pair_id": "P114",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B229",
-  "pair_id": "P114",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B230",
-  "pair_id": "P115",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B231",
-  "pair_id": "P115",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B232",
-  "pair_id": "P116",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B233",
-  "pair_id": "P116",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B234",
-  "pair_id": "P117",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B235",
-  "pair_id": "P117",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B236",
-  "pair_id": "P118",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B237",
-  "pair_id": "P118",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B238",
-  "pair_id": "P119",
   "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "outside_bracket_first",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "same_priority_rtl",
   "foil_status": "unsupported",
   "statement_correct": false,
   "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul"
+   "outside_bracket_first"
   ],
   "map_posterior": 0.2
  },
  {
   "id": "B239",
-  "pair_id": "P119",
   "category": "B",
   "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.2,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul"
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
  }
 ]

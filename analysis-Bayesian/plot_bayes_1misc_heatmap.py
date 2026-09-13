@@ -2,8 +2,8 @@
 """
 plot_bayes_1misc_heatmap.py
 
-Present x named "confusion matrix" for the Bayesian ideal observer on the v4
-pool. Rows = misconception PRESENT in the trace, columns = misconception NAMED
+Present x named "confusion matrix" for the Bayesian ideal observer on the v5
+pool (240 items, each on its own expression). Rows = misconception PRESENT in the trace, columns = misconception NAMED
 in the statement.
 
   - The DIAGONAL (present = named) is category A: the statement names the rule
@@ -11,7 +11,7 @@ in the statement.
   - The OFF-DIAGONAL (present != named) is category B: the statement names a
     foil, so disagreeing is correct.
 
-The v4 pool was built so this figure has NO EMPTY BOXES. Every present rule
+The pool is built so this figure has NO EMPTY BOXES. Every present rule
 supplies 40 items: 10 in each (category x position) cell, with the 20 category-B
 items spread evenly over all 5 foils. So the panels below are complete whether
 they are drawn pooled or split by position:
@@ -19,10 +19,9 @@ they are drawn pooled or split by position:
     pooled by position   diagonal 20, off-diagonal 4
     split by position    diagonal 10, off-diagonal 2
 
-Panels here split by ERROR POSITION, which is the v4 factor. Do NOT split this
-figure by refutation status: under v4 status is recorded but not balanced, so a
-status split reintroduces exactly the holes v4 was built to remove (that is the
-v3 heatmap's problem, see HANDOFF 7b).
+Panels here split by ERROR POSITION, the manipulated factor. Do NOT split this
+figure by refutation status: status is recorded but not balanced, so a status
+split brings back lopsided and empty cells.
 
 Run from repo root:
     python3 analysis-Bayesian/plot_bayes_1misc_heatmap.py
@@ -101,7 +100,7 @@ def main():
     cbar = fig.colorbar(im, ax=axes, fraction=0.025, pad=0.02,
                         ticks=[0, 0.25, 0.5, 0.75, 1.0])
     cbar.set_label('posterior marginal P(named rule | trace)', fontsize=9)
-    fig.suptitle('Bayesian ideal observer, v4 pool (240 items): present (rows) × named (columns)\n'
+    fig.suptitle('Bayesian ideal observer, v5 pool (240 items): present (rows) × named (columns)\n'
                  'split by error position; every cell occupied by design',
                  fontsize=12.5, y=0.98)
     p = os.path.join(HERE, 'bayes_1misc_heatmap.png')
@@ -112,7 +111,7 @@ def main():
     mean, n = build_matrix(rows)
     fig, ax = plt.subplots(figsize=(6.8, 6.8))
     im = draw(ax, mean, n,
-              'Bayesian ideal observer, v4 pool (positions pooled)\n'
+              'Bayesian ideal observer, v5 pool (positions pooled)\n'
               'diagonal = category A (agree); off-diagonal = category B foils (disagree)')
     cbar = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04, ticks=[0, 0.25, 0.5, 0.75, 1.0])
     cbar.set_label('posterior marginal P(named rule | trace)', fontsize=9)

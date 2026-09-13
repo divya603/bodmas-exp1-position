@@ -12,11 +12,12 @@ the figures and the recorded observer can never drift apart. Regenerate it with
 
 Properties of this pool the figures have to respect:
   - Only categories A and B exist. There are no 2-misconception items.
-  - Every item carries `error_position` (1 or 3), the manipulated factor, and
-    `pair_id` linking the two positions of one expression.
+  - Every item carries `error_position` (1 or 3), the manipulated factor. Each
+    item has its own expression (no matched pairs since v5), so position is
+    compared between expressions.
   - Category A is a POINT MASS: all 120 items score exactly 1.000. Anything
     that tries to show its shape is drawing noise that is not there.
-  - Category B marginals take only 8 distinct values in [0, 0.333], so they are
+  - Category B marginals take only 11 distinct values in [0, 0.333], so they are
     effectively discrete. Use exact-value stems, not a KDE, which would invent
     shape between the spikes.
   - `foil_status` is recorded but NOT balanced. Never split a figure by it; the

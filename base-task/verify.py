@@ -3,37 +3,42 @@ verify.py
 
 Independent checks on stimulus_pool.json. Recomputes everything from the
 model rather than trusting the builder: traces are re-derived from the
-expression, error positions re-tested for expert legality, and foil marginals
-re-run through the 22-hypothesis observer.
+expression, error positions re-tested for expert legality, foil marginals
+re-run through the 22-hypothesis observer, and the look-alike guard re-applied.
 
-The v4-specific checks are the balance ones. v4 exists to make the present x
-named heatmap full, so this asserts the exact cell counts that guarantee it:
-20 on each diagonal cell, 4 in each of the 30 off-diagonal cells, 0 empty.
+Beyond the model checks it asserts the v5 design exactly: every expression used
+by exactly one item, 60 items in each of the four (category x position) pools
+the frontend samples from, and the present x named heatmap full (20 on each
+diagonal cell, 4 in each of the 30 off-diagonal cells, 0 empty).
 
-It deliberately does NOT check refutation balance. Under v4 foil_status is
-recorded but not a factor, and the per-foil counts are expected to be lopsided
-(outside_bracket_first comes out about 2 refuted to 18 unsupported). What IS
-checked is that the stored status matches a fresh recomputation, and that it is
-the same at both positions of a pair.
+For every A item it also checks the error step itself: no other single rule
+could have made it, and the named rule plainly describes it. So a correct
+statement always names a misconception the work visibly uses.
+
+It deliberately does NOT check refutation balance: foil_status is recorded but
+not a factor, and the per-foil counts are expected to be lopsided. What IS
+checked is that the stored status matches a fresh recomputation.
 
 Run after any pool regeneration. Exits non-zero on any failure.
 """
 
 import json
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 
 from parser import build_dag
-from traces import generate_traces
+from traces import generate_traces, _next_dags
+from misconceptions import dag_to_str
 from distance import correct_answer
 from learner import MISCONCEPTION_FLIPS
 from inference import posterior_over_profiles, marginal_rule_probability
 from generator_constrained import validate_trace, error_steps
+from lookalike import error_step_rules
 from pool import (HYPOTHESES, STATEMENT_TEMPLATES, POSITIONS, N_OPS,
-                     REFUTED_MAX, UNSUPPORTED_MAX, _status,
-                     A_PAIRS_PER_RULE, B_PAIRS_PER_CELL)
+                  UNSUPPORTED_MAX, _status, A_PER_CELL, B_PER_CELL)
 
 IDS = list(MISCONCEPTION_FLIPS.keys())
+POOL_SIZE = {'A': A_PER_CELL * len(IDS), 'B': B_PER_CELL * len(IDS) * (len(IDS) - 1)}
 fails = []
 
 
@@ -42,15 +47,16 @@ def check(cond, msg):
         fails.append(msg)
 
 
+def one_step(line, rules):
+    """Every line a learner holding `rules` could write next."""
+    return {dag_to_str(d) for d in _next_dags(build_dag(line), list(rules))}
+
+
 def main(path='stimulus_pool.json'):
     items = json.load(open(path, encoding='utf-8'))
     print(f"verifying {len(items)} items from {path}\n")
 
     check(len({i['id'] for i in items}) == len(items), "duplicate item ids")
-
-    by_pair = defaultdict(list)
-    for i in items:
-        by_pair[i['pair_id']].append(i)
 
     for it in items:
         tag = it['id']
@@ -88,12 +94,20 @@ def main(path='stimulus_pool.json'):
               f"{tag}: belief statement does not match probed rule / name")
 
         post = posterior_over_profiles(trace, profiles=HYPOTHESES)
+        visible = error_step_rules(trace)
         if it['category'] == 'A':
             check(probed == true_m and it['statement_correct'] is True,
                   f"{tag}: A item probed {probed} but trace holds {true_m}")
             check(marginal_rule_probability(post, probed) > 0.99,
                   f"{tag}: A item true-rule marginal too low")
             check('foil_status' not in it, f"{tag}: A item carries a foil_status")
+            # the error step is the named misconception and nothing else
+            for k in errs:
+                others = [r for r in IDS
+                          if r != true_m and trace[k] in one_step(trace[k - 1], [r])]
+                check(not others, f"{tag}: error step {k} could also be made by {others}")
+            check(probed in visible,
+                  f"{tag}: error step does not visibly show {probed} (reads as {sorted(visible)})")
         else:
             check(probed != true_m and it['statement_correct'] is False,
                   f"{tag}: B item probes its own true rule")
@@ -105,45 +119,32 @@ def main(path='stimulus_pool.json'):
             # status is recorded, not balanced, but it must still be correct
             check(_status(marg) == it['foil_status'],
                   f"{tag}: foil_status {it['foil_status']} but marginal {marg:.3f} says {_status(marg)}")
+            # look-alike guard: the foil must not plainly describe the error step
+            check(probed not in visible,
+                  f"{tag}: foil {probed} plainly describes the error step (look-alike)")
 
-    # matched pairs
-    for pid, members in by_pair.items():
-        check(len(members) == 2, f"{pid}: {len(members)} members, want 2")
-        if len(members) != 2:
-            continue
-        a, b = members
-        check(a['expression'] == b['expression'], f"{pid}: members differ in expression")
-        check({a['error_position'], b['error_position']} == set(POSITIONS),
-              f"{pid}: positions {a['error_position']}/{b['error_position']}")
-        check(a['trace'] != b['trace'], f"{pid}: both members show the same trace")
-        for f in ('category', 'probed_misconception', 'statement_correct'):
-            check(a[f] == b[f], f"{pid}: members differ in {f}")
-        check(a['misconceptions'] == b['misconceptions'],
-              f"{pid}: members differ in the present misconception")
-        if a['category'] == 'B':
-            # status is not a factor, but a flip inside a pair would put a
-            # nuisance difference between the two positions being compared
-            check(a['foil_status'] == b['foil_status'],
-                  f"{pid}: foil_status differs between positions")
-
-    # one expression is used by exactly one pair, so nobody can meet it twice
+    # every expression is used by exactly one item, so no one can meet it twice
     per_expr = Counter(i['expression'] for i in items)
-    check(all(v == 2 for v in per_expr.values()),
-          f"expressions not used exactly twice: {[e for e,v in per_expr.items() if v!=2][:3]}")
+    check(all(v == 1 for v in per_expr.values()),
+          f"expressions used more than once: {[e for e, v in per_expr.items() if v > 1][:3]}")
 
-    # ── v4 balance: the whole point of the design ──
+    # the four pools the frontend samples from
+    pools = Counter((i['category'], i['error_position']) for i in items)
+    want = Counter({(c, p): POOL_SIZE[c] for c in 'AB' for p in POSITIONS})
+    check(pools == want, f"sampling pools {dict(pools)}, want {dict(want)}")
+
     ca = Counter((i['misconceptions'][0], i['error_position'])
                  for i in items if i['category'] == 'A')
-    check(len(ca) == 12 and set(ca.values()) == {A_PAIRS_PER_RULE},
-          f"A cells (present x position) not all {A_PAIRS_PER_RULE}: {sorted(set(ca.values()))}")
+    check(len(ca) == 12 and set(ca.values()) == {A_PER_CELL},
+          f"A cells (present x position) not all {A_PER_CELL}: {sorted(set(ca.values()))}")
 
     cb = Counter((i['misconceptions'][0], i['probed_misconception'], i['error_position'])
                  for i in items if i['category'] == 'B')
-    check(len(cb) == 60 and set(cb.values()) == {B_PAIRS_PER_CELL},
-          f"B cells (present x named x position) not all {B_PAIRS_PER_CELL}: "
+    check(len(cb) == 60 and set(cb.values()) == {B_PER_CELL},
+          f"B cells (present x named x position) not all {B_PER_CELL}: "
           f"{len(cb)} cells, sizes {sorted(set(cb.values()))}")
 
-    # per present rule: 40 items, 20 per position, half named half foiled
+    # per present rule: 40 items, 10 per category x position
     for m in IDS:
         sub = [i for i in items if i['misconceptions'][0] == m]
         check(len(sub) == 40, f"{m}: {len(sub)} items, want 40")
@@ -160,12 +161,6 @@ def main(path='stimulus_pool.json'):
     check(diag == {20}, f"diagonal cells not all 20: {sorted(diag)}")
     check(off == {4}, f"off-diagonal cells not all 4: {sorted(off)}")
 
-    # no foil is ever probed on a trace generated by itself
-    for i in items:
-        if i['category'] == 'B':
-            check(i['probed_misconception'] != i['misconceptions'][0],
-                  f"{i['id']}: foil equals the present rule")
-
     if fails:
         print(f"FAILED - {len(fails)} problem(s):")
         for f in fails[:25]:
@@ -179,11 +174,13 @@ def main(path='stimulus_pool.json'):
             if n.lstrip('-').isdigit()]
     marg = [i['io_foil_marginal'] for i in items if i['category'] == 'B']
     print("ALL CHECKS PASSED")
-    print(f"  {len(items)} items / {len(by_pair)} matched pairs / {len(per_expr)} expressions")
+    print(f"  {len(items)} items / {len(per_expr)} expressions, each used once")
+    print(f"  sampling pools: {POOL_SIZE['A']} per A position, {POOL_SIZE['B']} per B position")
     print(f"  every trace: {N_OPS} steps, exactly 1 expert-illegal move, at step "
           f"{POSITIONS[0]} or {POSITIONS[1]}")
+    print(f"  A error steps: only the named rule could make them, and it visibly shows")
+    print(f"  B foils: none plainly describes the error step (look-alike guard)")
     print(f"  present x named heatmap: 0 empty cells, diagonal 20, off-diagonal 4")
-    print(f"  each rule present in 40 items: 10 x (A/B) x (pos{POSITIONS[0]}/pos{POSITIONS[1]})")
     print(f"  foil marginals: min {min(marg):.3f}  max {max(marg):.3f}  "
           f"mean {sum(marg)/len(marg):.3f}  (status recorded, NOT balanced)")
     print(f"  numbers shown: min {min(nums)}  max {max(nums)}  "
