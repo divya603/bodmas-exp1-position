@@ -57,15 +57,19 @@ npm run setup_project                 # npm install + git hooks (post-commit/pos
 pip install -r base-task/requirements.txt
 ```
 
-**Deploy secrets are NOT set on this repo yet** (as of 2026-09-13). GitHub does not copy secrets
-between repos, so the very first push's deploy run is expected to fail. To fix, once:
+**Deploy secrets are NOT set on this repo yet** (as of 2026-09-13), so **nothing has been deployed
+yet**. GitHub does not copy secrets between repos. `deploy.yml` handles that gracefully: its
+`check-secrets` job sees they are missing and SKIPS the `deploy` job, so the run still shows GREEN,
+with a "secrets are not configured, skipping deploy" notice. The initial push (run 34769479840) did
+exactly that. To enable deploys, once:
 1. Copy `env/.env.local` and `env/.env.deploy.local` from the old checkout at
    `~/Desktop/NYU/Darpa/Bodmas_model/env/`. Both are gitignored (they hold the Firebase app config
    and the lab-server SSH details) and must never be committed.
 2. Run `npm run upload_config`. It pushes all 8 secrets (`SECRET_APP_CONFIG`, `EXP_DEPLOY_HOST`,
    `EXP_DEPLOY_KEY`, `EXP_DEPLOY_PATH`, `EXP_DEPLOY_PORT`, `EXP_DEPLOY_USER`, `SLACK_WEBHOOK_URL`,
    `SLACK_WEBHOOK_ERROR_URL`) to whatever repo `origin` points at. Needs `gh` logged in.
-3. Push any commit (or re-run the failed workflow with `gh run rerun <id>`) and watch it go green.
+3. Push any commit, then confirm with `gh run view <id>` that the **`deploy` job itself ran** (build
+   and rsync, a few minutes), not merely that the workflow is green.
 Update this section once done.
 
 What changes automatically because this is a new repo:
@@ -405,6 +409,9 @@ npm run upload_config                      # (re)push deploy secrets from env/*.
   locally but never pushed.
 - **Pushing `main` deploys the live experiment.** Ask the user before pushing experiment-material
   changes to `main`.
+- **A green deploy run does not mean it deployed.** With secrets missing, the `deploy` job is skipped
+  and the workflow still passes. Check the `deploy` job's steps (`gh run view <id>`), then check the
+  live bundle.
 - **`sampleForm.js` and its Python twin must stay in sync.** The live experiment uses the JS one.
 - **Never commit** `data/real-all-main-data.json` (participant demographics), anything under
   `data/private/`, `env/*.local`, or any API key.
