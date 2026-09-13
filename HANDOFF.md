@@ -360,14 +360,29 @@ it locally.
   Prolific study. A new Prolific study issues a new code; replace it in both blocks before launch.
 - **`public/consent-form.pdf`** NYU IRB form (IRB-FY2026-11440, PI Mark Ho).
 
-### ⚠️ Practice items are still the OLD study's
+### Frontend status
 As of 2026-09-13 `src/user/data/stimulus_pool.json` is the v5 pool (byte-identical to
 `base-task/stimulus_pool.json`) and `sampleForm.js` is the new sampler. **Deployed and verified
 2026-09-13:** commit 975c0dc, deploy run 34776824047 (the `deploy` job ran), and the live bundle
 (`assets/main-C0VuXHPj.js` at that commit) contains the v5 expression `(9 × 2 + 4) - 1 + 8 ÷ 2 + 11`
-and none of the old pool's expressions. `src/user/data/practice_items.json` is still the old 5-item
-practice set with 2-misconception trials, so the site is not ready for participants until §8 item 1
-lands. The user chose to redo the practice items and instructions later.
+and none of the old pool's expressions.
+
+**Practice items (new 2026-09-13; NOT yet committed or deployed, update this line when they are).**
+`src/user/data/practice_items.json` is written by `base-task/practice.py`, which holds the three
+user-approved items verbatim and checks them against the model: not in the pool, one error at the
+declared step that reads as the true rule only, B statements pass the foil rules and the look-alike
+guard with the intended status, names outside the task's 24. Fixed order, as the user specified:
+
+| id | statement | error | true rule | statement names | why disagree |
+|---|---|---|---|---|---|
+| P1 | correct | step 1 | add_before_mul | add_before_mul | |
+| P2 | wrong | step 3 | sub_before_div | add_before_div | ruled out: at step 4 the student divides 38 ÷ 2 with `2 + 40` available |
+| P3 | wrong | step 1 | same_priority_rtl | sub_before_div | no chance: the problem has no subtraction |
+
+After each answer the error step is highlighted amber with a note, plus a feedback paragraph that
+explains the right answer without saying whether the participant was right. Answer keys are 1 agree
+/ 2 disagree (the user's choice). The instructions and comprehension quiz are still the old study's
+apart from the practice count (§8 item 1).
 
 ### Bonus
 Binary direction only: rating >= 4 counts as agree, correct if that matches `statement_correct`.
@@ -386,13 +401,13 @@ https://www.codec-lab.org/divya603/bodmas-exp1-position/main/?PROLIFIC_PID={{%PR
 Test it end to end (confirm a `prolific_id` is recorded) before launching any batch.
 
 ### Checklist before running any participant
-- [ ] New form sampler + new pool (deployed and verified 2026-09-13) + new practice items (§8 item 1) deployed, and the LIVE
+- [ ] New form sampler + new pool (deployed and verified 2026-09-13) + new practice items (built 2026-09-13, not yet deployed) deployed, and the LIVE
       bundle verified to contain the new pool (grep the deployed JS for a known new expression).
 - [ ] Prolific completion code in `ThanksView.vue` replaced with the new Prolific study's code.
 - [ ] Consent and debrief: `design.js` already points `consentPdfUrl` at `public/consent-form.pdf` and
       `debriefPdfUrl` at `public/debrief.pdf`, and both files exist. Confirm with the PI that the IRB
       protocol (IRB-FY2026-11440) covers Experiment 1 and that the consent PDF is the current version.
-- [ ] Instructions and comprehension quiz reviewed for this design (§8 item 4).
+- [ ] Instructions and comprehension quiz reviewed for this design (§8 item 1).
 - [ ] Prolific URL tested end to end with a fake PID: a `prolific_id` must appear in the recruitment
       data (`npm run getrecruitment`, type `testing`).
 - [ ] Fresh bonus ledger for this experiment (see below).
@@ -436,6 +451,7 @@ cd base-task && python3 verify.py          # independent checks; RUN AFTER ANY R
 cd base-task && python3 bayes.py           # ideal observer -> bayes_per_item.json (expect 240/240)
 cd base-task && python3 find_pairs.py 12   # per-misconception matched-pair yields (v4 stat only)
 cd base-task && python3 sample_form.py     # sampler checks over 500 seeds (twin of sampleForm.js)
+cd base-task && python3 practice.py        # check + write the 3 practice items to src/user/data/
 
 # Figures (from repo root)
 python3 analysis-Bayesian/plot_bayes_1misc_heatmap.py
@@ -454,20 +470,22 @@ npm run upload_config                      # (re)push deploy secrets from env/*.
 
 ## 8. What is next
 
-1. **Practice items** (now the blocker). Needed for this design (1 misconception, A and B trials).
-   The old practice generator is gone. Keep the answer keys balanced: the old set was 4 agree / 1
-   disagree and visibly shifted participants toward agreeing. Practice expressions must not appear
-   in the pool, and practice B items should respect the look-alike guard (§3 item 6).
-2. **Check the instructions and comprehension quiz** (`InstructionsView.vue`, `quizQuestions.js`)
-   still match this design; they were written for the old study. They must make clear that a
-   statement is rated on whether it explains the work: 62 of 120 B items name a rule the expression
-   gives the student no chance to show, and "disagree" is the right answer there only on that framing.
-3. Deploy secrets are set up (§1). Verify the built bundle actually contains the new pool before
-   any participant runs. Replace the Prolific completion code (§6). Work through the §6 checklist.
-4. The hardest-foil exclusion (§3 item 4, §5) is kept as is; the user did not ask to change it
+1. **Check the instructions and comprehension quiz** (now the blocker; the user will do this
+   later): `src/user/components/trace_judgment/InstructionsView.vue` and
+   `src/user/components/quizQuestions.js` were written for the old study; only the practice count
+   has been changed (5 -> 3). They must make clear that a statement is rated on whether it explains
+   the work: 62 of 120 B items name a rule the expression gives the student no chance to show, and
+   "disagree" is the right answer there only on that framing (practice P3 teaches exactly this).
+2. Deploy secrets are set up (§1). Verify the built bundle actually contains the new pool and
+   practice items before any participant runs. Replace the Prolific completion code (§6). Work
+   through the §6 checklist.
+3. The hardest-foil exclusion (§3 item 4, §5) is kept as is; the user did not ask to change it
    (2026-09-13). Revisit only if they do.
 
-Done 2026-09-13 (were items 1 and 2):
+Done 2026-09-13:
+- **Practice items**: 3 fixed items, user-approved, built and checked by `base-task/practice.py`
+  (details in §6 "Frontend status"). The old 2-misconception marker code was removed from
+  `PracticeView.vue`.
 - **Form sampler**, design decided by the user: four pools by category x position (A/1, A/3, B/1,
   B/3); from each pool, one item drawn at random per misconception present, so 24 trials: 12 agree
   / 12 disagree, 12 per position, every misconception present exactly 4 times (once per pool), and

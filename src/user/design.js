@@ -188,10 +188,9 @@ timeline.pushSeqView({
   },
 })
 
-// practice trials: 5 fixed items answered like real trials, each followed by
-// feedback (erroneous steps highlighted + the right answer explained; on
-// two-misconception items the step the statement points to is marked in
-// bold). Not scored toward the bonus.
+// practice trials: 3 fixed items (base-task/practice.py) answered like real
+// trials, each followed by feedback (the erroneous step highlighted + the right
+// answer explained). Not scored toward the bonus.
 timeline.pushSeqView({
   name: 'practice',
   component: PracticeView,
