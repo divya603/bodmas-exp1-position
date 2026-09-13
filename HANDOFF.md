@@ -362,10 +362,12 @@ it locally.
 
 ### ⚠️ Practice items are still the OLD study's
 As of 2026-09-13 `src/user/data/stimulus_pool.json` is the v5 pool (byte-identical to
-`base-task/stimulus_pool.json`) and `sampleForm.js` is the new sampler; `npm run build` compiles.
-**NOT yet committed or deployed** (update this line when it is). `src/user/data/practice_items.json`
-is still the old 5-item practice set with 2-misconception trials, so the site is not ready for
-participants until §8 item 1 lands.
+`base-task/stimulus_pool.json`) and `sampleForm.js` is the new sampler. **Deployed and verified
+2026-09-13:** commit 975c0dc, deploy run 34776824047 (the `deploy` job ran), and the live bundle
+(`assets/main-C0VuXHPj.js` at that commit) contains the v5 expression `(9 × 2 + 4) - 1 + 8 ÷ 2 + 11`
+and none of the old pool's expressions. `src/user/data/practice_items.json` is still the old 5-item
+practice set with 2-misconception trials, so the site is not ready for participants until §8 item 1
+lands. The user chose to redo the practice items and instructions later.
 
 ### Bonus
 Binary direction only: rating >= 4 counts as agree, correct if that matches `statement_correct`.
@@ -384,7 +386,7 @@ https://www.codec-lab.org/divya603/bodmas-exp1-position/main/?PROLIFIC_PID={{%PR
 Test it end to end (confirm a `prolific_id` is recorded) before launching any batch.
 
 ### Checklist before running any participant
-- [ ] New form sampler + new pool (done locally 2026-09-13) + new practice items (§8 item 1) deployed, and the LIVE
+- [ ] New form sampler + new pool (deployed and verified 2026-09-13) + new practice items (§8 item 1) deployed, and the LIVE
       bundle verified to contain the new pool (grep the deployed JS for a known new expression).
 - [ ] Prolific completion code in `ThanksView.vue` replaced with the new Prolific study's code.
 - [ ] Consent and debrief: `design.js` already points `consentPdfUrl` at `public/consent-form.pdf` and
@@ -474,8 +476,8 @@ Done 2026-09-13 (were items 1 and 2):
   WRONG statement in a form is usually 3 or 4 and at most 7, so a statement's total count per form
   ranges from 2 to 9. Every item is drawn about equally often (31 to 75 times per 500 forms, expect
   50).
-- **Pool propagated** to `src/user/data/stimulus_pool.json` together with the sampler; `npm run
-  build` passes.
+- **Pool propagated** to `src/user/data/stimulus_pool.json` together with the sampler; deployed in
+  975c0dc and verified in the live bundle (§6).
 
 ---
 
