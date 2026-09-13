@@ -384,8 +384,9 @@ After each answer the error step is highlighted amber with a note, plus a feedba
 explains the right answer without saying whether the participant was right. Answer keys are 1 agree
 / 2 disagree (the user's choice).
 
-**Instructions and quiz (rewritten 2026-09-13, user-approved; NOT yet committed or deployed, update
-this line when they are).** `InstructionsView.vue` covers: the task; the correct order of operations
+**Instructions and quiz (rewritten 2026-09-13, user-approved; deployed and verified: commit 57625e0,
+deploy run 34779362204, live bundle `assets/main-BQgn2sQl.js` has the new text and quiz, not the old
+quiz).** `InstructionsView.vue` covers: the task; the correct order of operations
 (brackets, then × and ÷ left to right, then + and - left to right); every student makes exactly one
 mistake; the job (agree when the mistake is the one the statement describes, disagree when it is a
 different one or the problem gives no chance to show the belief; the scale shows how sure you are);
@@ -419,8 +420,8 @@ Test it end to end (confirm a `prolific_id` is recorded) before launching any ba
 - [ ] Consent and debrief: `design.js` already points `consentPdfUrl` at `public/consent-form.pdf` and
       `debriefPdfUrl` at `public/debrief.pdf`, and both files exist. Confirm with the PI that the IRB
       protocol (IRB-FY2026-11440) covers Experiment 1 and that the consent PDF is the current version.
-- [ ] Instructions and comprehension quiz rewritten for this design (done 2026-09-13; tick once
-      deployed and seen in the live site).
+- [x] Instructions and comprehension quiz rewritten for this design and deployed (verified in the
+      live bundle 2026-09-13).
 - [ ] Prolific URL tested end to end with a fake PID: a `prolific_id` must appear in the recruitment
       data (`npm run getrecruitment`, type `testing`).
 - [ ] Fresh bonus ledger for this experiment (see below).
