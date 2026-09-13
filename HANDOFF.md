@@ -50,27 +50,44 @@ than adding them, and that asymmetry shows up repeatedly below.
 
 ## 1. First-time setup on a new machine or clone
 
+Run these in order, once, right after cloning:
 ```bash
 git clone https://github.com/divya603/bodmas-exp1-position.git
 cd bodmas-exp1-position
-npm run setup_project                 # npm install + git hooks (post-commit/post-checkout)
+npm run get_secrets          # fetch the 5 gitignored lab files from codec-lab/smile-secrets
+npm run upload_config        # push the app + deploy config into THIS repo's GitHub secrets
+npm run setup_project        # npm install + git hooks (post-commit / post-checkout)
 pip install -r base-task/requirements.txt
+(cd base-task && python3 verify.py)   # must print ALL CHECKS PASSED
+npm run force_deploy         # first deployment (gh workflow run deploy.yml on the current branch)
 ```
 
-**Deploy secrets are NOT set on this repo yet** (as of 2026-09-13), so **nothing has been deployed
-yet**. GitHub does not copy secrets between repos. `deploy.yml` handles that gracefully: its
-`check-secrets` job sees they are missing and SKIPS the `deploy` job, so the run still shows GREEN,
-with a "secrets are not configured, skipping deploy" notice. The initial push (run 34769479840) did
-exactly that. To enable deploys, once:
-1. Copy `env/.env.local` and `env/.env.deploy.local` from the old checkout at
-   `~/Desktop/NYU/Darpa/Bodmas_model/env/`. Both are gitignored (they hold the Firebase app config
-   and the lab-server SSH details) and must never be committed.
-2. Run `npm run upload_config`. It pushes all 8 secrets (`SECRET_APP_CONFIG`, `EXP_DEPLOY_HOST`,
-   `EXP_DEPLOY_KEY`, `EXP_DEPLOY_PATH`, `EXP_DEPLOY_PORT`, `EXP_DEPLOY_USER`, `SLACK_WEBHOOK_URL`,
-   `SLACK_WEBHOOK_ERROR_URL`) to whatever repo `origin` points at. Needs `gh` logged in.
-3. Push any commit, then confirm with `gh run view <id>` that the **`deploy` job itself ran** (build
-   and rsync, a few minutes), not merely that the workflow is green.
-Update this section once done.
+What each secrets step does:
+- **`npm run get_secrets`** (`scripts/get_secrets.sh`) downloads, via `gh api`, from the private
+  lab repo `codec-lab/smile-secrets`: `env/.env.local` (Firebase app config), `env/.env.deploy.local`
+  (lab-server SSH details), `env/.env.docs.local`, `firebase/.service-account-key.json` (needed by
+  `npm run getdata`), and `scripts/get_recruitment_data.mjs` (needed by `npm run getrecruitment`).
+  All five are gitignored and must never be committed. Needs `gh` logged in with access to that repo
+  (divya603 has access, checked 2026-09-13; otherwise ask Mark). Fallback without access: copy the
+  same five files from the old checkout `~/Desktop/NYU/Darpa/Bodmas_model/`.
+- **`npm run upload_config`** (`scripts/update_config.sh`) pushes `env/.env.local` as
+  `SECRET_APP_CONFIG` and every line of `env/.env.deploy.local` as its own secret
+  (`EXP_DEPLOY_HOST`, `EXP_DEPLOY_KEY`, `EXP_DEPLOY_PATH`, `EXP_DEPLOY_PORT`, `EXP_DEPLOY_USER`,
+  `SLACK_WEBHOOK_URL`, `SLACK_WEBHOOK_ERROR_URL`) to whatever repo `origin` points at. Only needed
+  once per repo, not once per clone.
+
+**Status as of 2026-09-13: secrets NOT yet uploaded, so nothing has been deployed.** `deploy.yml`
+handles missing secrets gracefully: its `check-secrets` job SKIPS the `deploy` job and the run still
+shows GREEN, with a "secrets are not configured, skipping deploy" notice. The initial pushes did
+exactly that. After `force_deploy`, confirm with `gh run list` then `gh run view <id>` that the
+**`deploy` job itself ran** (build and rsync, a few minutes), and look for the lab Slack message.
+Update this status line once done.
+
+⚠️ The first deployment only proves the pipeline works. **Until §8 item 1 lands, the deployed site
+serves the OLD study's pool and practice items**, so do not share its URL with anyone.
+
+Node: `.node_version` pins 20.18.1; Node 24 has been working locally. If `npm install` misbehaves,
+switch with `nvm use 20`.
 
 What changes automatically because this is a new repo:
 - **The deploy URL.** Path is `/<owner>/<repo>/<branch>/`, so main deploys to
@@ -304,7 +321,8 @@ it locally.
   question after the task.
 - **`src/user/utils/sampleForm.js`** draws each participant's 24-trial form.
 - **`src/builtins/thanks/ThanksView.vue`** upload-progress screen + Prolific completion code
-  **`CNIEB9GV`** (in both the `prolific` and `web` blocks).
+  **`CNIEB9GV`** (in both the `prolific` and `web` blocks). ⚠️ That code belongs to the OLD study's
+  Prolific study. A new Prolific study issues a new code; replace it in both blocks before launch.
 - **`public/consent-form.pdf`** NYU IRB form (IRB-FY2026-11440, PI Mark Ho).
 
 ### ⚠️ The frontend does NOT yet use this experiment's pool
@@ -329,8 +347,22 @@ https://www.codec-lab.org/divya603/bodmas-exp1-position/main/?PROLIFIC_PID={{%PR
 ```
 Test it end to end (confirm a `prolific_id` is recorded) before launching any batch.
 
+### Checklist before running any participant
+- [ ] New form sampler + new pool + new practice items deployed (§8 items 1 to 3), and the LIVE
+      bundle verified to contain the new pool (grep the deployed JS for a known new expression).
+- [ ] Prolific completion code in `ThanksView.vue` replaced with the new Prolific study's code.
+- [ ] Consent and debrief: `design.js` already points `consentPdfUrl` at `public/consent-form.pdf` and
+      `debriefPdfUrl` at `public/debrief.pdf`, and both files exist. Confirm with the PI that the IRB
+      protocol (IRB-FY2026-11440) covers Experiment 1 and that the consent PDF is the current version.
+- [ ] Instructions and comprehension quiz reviewed for this design (§8 item 4).
+- [ ] Prolific URL tested end to end with a fake PID: a `prolific_id` must appear in the recruitment
+      data (`npm run getrecruitment`, type `testing`).
+- [ ] Fresh bonus ledger for this experiment (see below).
+
 ### Running participants and paying them
-- Pull data: `npm run getdata` -> `data/real-all-main-data.json` (participant records; each has
+- Pull data: `npm run getdata` prompts for data type (`testing` = your own test runs, `real` =
+  participants), complete-only or all, branch (use `main`), and filename; it saves JSON under
+  `data/`, typically `data/real-all-main-data.json` (participant records; each has
   `.data` with `seedID`, `recruitmentService`, `pageData_exp.visit_0.data` = 24 trials + bonus
   block). `npm run getrecruitment` -> `data/private/real-main-recruitment.json` (maps `session_id`
   -> `prolific_id`). **Join key: data `seedID` == recruitment `session_id`.** The interactive
@@ -396,7 +428,7 @@ npm run upload_config                      # (re)push deploy secrets from env/*.
 4. **Check the instructions and comprehension quiz** (`InstructionsView.vue`, `quizQuestions.js`)
    still match this design; they were written for the old study.
 5. **Set up deploy secrets** (§1) and verify the built bundle actually contains the new pool before
-   any participant runs.
+   any participant runs. Replace the Prolific completion code (§6). Work through the §6 checklist.
 6. Decide on the hardest-foil exclusion (§3 item 4, §5) before running participants.
 
 ---
