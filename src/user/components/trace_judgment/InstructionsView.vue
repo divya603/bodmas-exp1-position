@@ -11,6 +11,12 @@ function finish() {
 }
 </script>
 
+<!--
+  Text approved by the user 2026-09-13. The numbers here mirror the task code:
+  $2 = MAX_BONUS and 3 seconds = UNLOCK_DELAY_MS in TraceJudgmentView.vue,
+  24 problems = the form size in utils/sampleForm.js, 3 practice questions =
+  data/practice_items.json. Change them together.
+-->
 <template>
   <ConstrainedTaskWindow
     variant="ghost"
@@ -24,30 +30,39 @@ function finish() {
       </h1>
 
       <p class="text-left text-lg mb-4">
-        In this task, you will see a math problem along with the step-by-step work a student produced while solving
-        it.
+        In this study you will see a math problem, the step-by-step work a student wrote while solving it, and a
+        statement about what that student believes about the order of operations.
       </p>
 
       <p class="text-left text-lg mb-4">
-        Below the work, you'll see a statement about what the student <strong>believes</strong> about the order of
-        operations, for example, that they think addition should always come before multiplication.
+        <strong>The correct order of operations:</strong> brackets first; then × and ÷, working left to right; then +
+        and -, working left to right.
       </p>
 
       <p class="text-left text-lg mb-4">
-        Your job is to judge <strong>how well that statement explains the work shown</strong>, using the student's
-        steps as your evidence, not just whether their final answer happens to be right or wrong.
+        <strong>Every student in this study makes exactly one mistake</strong>, at one step of their work.
       </p>
 
       <p class="text-left text-lg mb-4">
-        For each problem, rate how much you agree with the statement on a 6-point scale from
-        <strong>Strongly Disagree</strong> to <strong>Strongly Agree</strong>.
+        <strong>Your job.</strong> Rate how much you agree that the statement describes what the student believes,
+        using their work as evidence. Agree when the student's mistake is the one the statement describes. Disagree
+        when their mistake is a different one, including when the problem never gives the student a chance to show
+        the belief in the statement. Use the 6-point scale, from <strong>Strongly Disagree</strong> to
+        <strong>Strongly Agree</strong>, to show how sure you are.
       </p>
 
       <p class="text-left text-lg mb-4">
-        You will begin with <strong>3 practice questions</strong>. After you answer each one, we will highlight the
-        step in the work where the student's error occurred and explain what the right answer would be. The
-        practice questions do not count toward your bonus. After the practice, you will move on to the actual
-        task.
+        <strong>Bonus.</strong> You can earn up to $2. Somewhat Agree, Agree and Strongly Agree all count as agreeing.
+        A problem counts as correct if you agree with a statement that matches the student's mistake, or disagree
+        with one that doesn't. How strongly you agree or disagree does not change the bonus. Guessing earns nothing:
+        the bonus starts once you get more than half right and reaches $2 at all correct.
+      </p>
+
+      <p class="text-left text-lg mb-4">
+        <strong>What happens next.</strong> You'll start with <strong>3 practice questions</strong>. After each one,
+        we highlight the student's mistake and explain the right answer. Practice doesn't count toward your bonus.
+        Then you'll judge <strong>24 problems</strong>. On each one, the answer buttons unlock after 3 seconds, so
+        take time to read the work.
       </p>
 
       <hr class="border-gray-300 my-4" />

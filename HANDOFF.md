@@ -382,8 +382,19 @@ guard with the intended status, names outside the task's 24. Fixed order, as the
 
 After each answer the error step is highlighted amber with a note, plus a feedback paragraph that
 explains the right answer without saying whether the participant was right. Answer keys are 1 agree
-/ 2 disagree (the user's choice). The instructions and comprehension quiz are still the old study's
-apart from the practice count (§8 item 1).
+/ 2 disagree (the user's choice).
+
+**Instructions and quiz (rewritten 2026-09-13, user-approved; NOT yet committed or deployed, update
+this line when they are).** `InstructionsView.vue` covers: the task; the correct order of operations
+(brackets, then × and ÷ left to right, then + and - left to right); every student makes exactly one
+mistake; the job (agree when the mistake is the one the statement describes, disagree when it is a
+different one or the problem gives no chance to show the belief; the scale shows how sure you are);
+the bonus (up to $2, Somewhat Agree and above counts as agree, strength does not matter, nothing at
+or below half right); 3 practice questions then 24 problems with a 3-second unlock. The user asked
+NOT to list the six beliefs with examples. Its numbers mirror `MAX_BONUS`, `UNLOCK_DELAY_MS`, the
+form size and the practice count; change them together. `quizQuestions.js`: 4 questions on one page,
+all must be right or the participant returns to the instructions: what the rating is based on, how
+many mistakes (exactly one), a different-mistake case (disagree), a no-chance case (disagree).
 
 ### Bonus
 Binary direction only: rating >= 4 counts as agree, correct if that matches `statement_correct`.
@@ -408,7 +419,8 @@ Test it end to end (confirm a `prolific_id` is recorded) before launching any ba
 - [ ] Consent and debrief: `design.js` already points `consentPdfUrl` at `public/consent-form.pdf` and
       `debriefPdfUrl` at `public/debrief.pdf`, and both files exist. Confirm with the PI that the IRB
       protocol (IRB-FY2026-11440) covers Experiment 1 and that the consent PDF is the current version.
-- [ ] Instructions and comprehension quiz reviewed for this design (§8 item 1).
+- [ ] Instructions and comprehension quiz rewritten for this design (done 2026-09-13; tick once
+      deployed and seen in the live site).
 - [ ] Prolific URL tested end to end with a fake PID: a `prolific_id` must appear in the recruitment
       data (`npm run getrecruitment`, type `testing`).
 - [ ] Fresh bonus ledger for this experiment (see below).
@@ -471,19 +483,17 @@ npm run upload_config                      # (re)push deploy secrets from env/*.
 
 ## 8. What is next
 
-1. **Check the instructions and comprehension quiz** (now the blocker; the user will do this
-   later): `src/user/components/trace_judgment/InstructionsView.vue` and
-   `src/user/components/quizQuestions.js` were written for the old study; only the practice count
-   has been changed (5 -> 3). They must make clear that a statement is rated on whether it explains
-   the work: 62 of 120 B items name a rule the expression gives the student no chance to show, and
-   "disagree" is the right answer there only on that framing (practice P3 teaches exactly this).
-2. Deploy secrets are set up (§1). Verify the built bundle actually contains the new pool and
-   practice items before any participant runs. Replace the Prolific completion code (§6). Work
-   through the §6 checklist.
+1. **Before launch:** replace the Prolific completion code (§6) and work through the §6 checklist
+   (IRB coverage, end-to-end Prolific URL test, fresh bonus ledger). Deploy secrets are set up (§1).
+2. **Check the advertised time with the PI.** `design.js` sets `estimated_time` to 30-40 minutes
+   and pay is prorated to it; 3 practice + 24 trials will likely take less (not yet measured).
 3. The hardest-foil exclusion (§3 item 4, §5) is kept as is; the user did not ask to change it
    (2026-09-13). Revisit only if they do.
 
 Done 2026-09-13:
+- **Instructions and quiz** rewritten for this design (details in §6 "Frontend status"). They make
+  clear that a statement is rated on whether it explains the work: 62 of 120 B items name a rule the
+  expression gives the student no chance to show, and "disagree" is right there only on that framing.
 - **Practice items**: 3 fixed items, user-approved, built and checked by `base-task/practice.py`
   (details in §6 "Frontend status"). The old 2-misconception marker code was removed from
   `PracticeView.vue`.
