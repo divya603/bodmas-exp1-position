@@ -421,7 +421,9 @@ chore-* style-* docs-* ci-*`, each to its own path `/<owner>/<repo>/<branch>/` w
 So **pushing `main` deploys the live experiment**; pushing any other branch gives it a separate
 staging site. Monitor with `gh run list` / `gh run watch`. A `deploy-error` workflow showing
 "skipped" on success is normal. A transient "SSH i/o timeout" at the "create the remote folders"
-step has happened before; `gh run rerun <id> --failed` fixed it.
+step has happened before; `gh run rerun <id> --failed` fixed it. Commits that touch only `*.md`
+files or `docs/` do NOT deploy (`paths-ignore` in `deploy.yml`), so a HANDOFF-only push leaves the
+live site as it was and shows no run in `gh run list`.
 
 ---
 
