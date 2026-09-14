@@ -390,12 +390,14 @@ quiz).** `InstructionsView.vue` covers: the task; the correct order of operation
 (brackets, then × and ÷ left to right, then + and - left to right); every student makes exactly one
 mistake; the job (agree when the mistake is the one the statement describes, disagree when it is a
 different one or the problem gives no chance to show the belief; the scale shows how sure you are);
-the bonus (up to $2, Somewhat Agree and above counts as agree, strength does not matter, nothing at
-or below half right); 3 practice questions then 24 problems with a 3-second unlock. The user asked
+the bonus, in one line since 2026-09-14 at the user's request ("You can earn a bonus of up to $2.",
+the same wording as Experiment 2); 3 practice questions then 24 problems with a 3-second unlock. The user asked
 NOT to list the six beliefs with examples. Its numbers mirror `MAX_BONUS`, `UNLOCK_DELAY_MS`, the
-form size and the practice count; change them together. `quizQuestions.js`: 4 questions on one page,
+form size and the practice count; change them together. `quizQuestions.js`: 3 questions on one page,
 all must be right or the participant returns to the instructions: what the rating is based on, how
-many mistakes (exactly one), a different-mistake case (disagree), a no-chance case (disagree).
+many mistakes (exactly one), a different-mistake case (disagree). The no-chance / brackets question was removed at the
+user's request 2026-09-14 (as in Experiment 2). **The 2026-09-14 bonus and quiz changes are NOT yet
+committed or deployed; update this line when they are.**
 
 ### Bonus
 Binary direction only: rating >= 4 counts as agree, correct if that matches `statement_correct`.

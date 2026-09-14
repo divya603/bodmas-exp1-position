@@ -1,8 +1,8 @@
 // Comprehension quiz shown after the instructions (design.js). All questions
 // must be answered correctly; otherwise the participant returns to the
-// instructions. Questions 3 and 4 check the two reasons to disagree that
-// practice items P2 and P3 teach: a different mistake, and no chance to show
-// the stated belief.
+// instructions. Question 3 checks one reason to disagree (a different mistake,
+// as in practice item P2). The brackets / no-chance question was removed at the
+// user's request 2026-09-14.
 export const QUIZ_QUESTIONS = [
   {
     id: 'pg1',
@@ -31,15 +31,6 @@ export const QUIZ_QUESTIONS = [
         question:
           "A student's mistake is doing subtraction before multiplication. The statement says the student believes " +
           'addition should be done before multiplication. Should you agree or disagree?',
-        multiSelect: false,
-        answers: ['Agree', 'Disagree'],
-        correctAnswer: ['Disagree'],
-      },
-      {
-        id: 'q4',
-        question:
-          'A problem has no brackets. The statement says the student believes you should calculate outside the ' +
-          "brackets before what's inside them. Should you agree or disagree?",
         multiSelect: false,
         answers: ['Agree', 'Disagree'],
         correctAnswer: ['Disagree'],
