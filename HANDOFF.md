@@ -396,8 +396,9 @@ NOT to list the six beliefs with examples. Its numbers mirror `MAX_BONUS`, `UNLO
 form size and the practice count; change them together. `quizQuestions.js`: 3 questions on one page,
 all must be right or the participant returns to the instructions: what the rating is based on, how
 many mistakes (exactly one), a different-mistake case (disagree). The no-chance / brackets question was removed at the
-user's request 2026-09-14 (as in Experiment 2). **The 2026-09-14 bonus and quiz changes are NOT yet
-committed or deployed; update this line when they are.**
+user's request 2026-09-14 (as in Experiment 2). The 2026-09-14 bonus and quiz changes are deployed and
+verified: commit b66dfc9, deploy run 34865350982, live bundle `assets/main-Bv_8lgFU.js` has the
+one-line bonus and no brackets question.
 
 ### Bonus
 Binary direction only: rating >= 4 counts as agree, correct if that matches `statement_correct`.
