@@ -361,7 +361,8 @@ it locally.
   green YES (D) and red NO (F) buttons (small: `w-28 py-2 text-base`) with "Press D for YES or F for
   NO" underneath; listens for the D / F keys while mounted, ignores input while `disabled`, emits
   `answer` with `{ response, method }`. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
-  are byte-identical to Experiment 2's; keep them in step.
+  are byte-identical to Experiment 2's and to Experiment 3's (`divya603/bodmas-exp3-teaching`, seeded
+  from Experiment 2 on 2026-09-16); when the user changes one, ask whether the others should follow.
 - **`src/user/components/trace_judgment/StrategyQuestionView.vue`** required free-text strategy
   question after the task (asks how they decided whether to answer YES or NO).
 - **`src/user/utils/sampleForm.js`** draws each participant's 24-trial form (design in §8, "Done").
