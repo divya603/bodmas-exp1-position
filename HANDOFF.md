@@ -512,9 +512,12 @@ npm run upload_config                      # (re)push deploy secrets from env/*.
 
 Done 2026-09-16 (user's request, mirroring Experiment 2):
 - **YES / NO answers** with the D / F keys replace the 6-point scale in practice and task; the
-  instructions, quiz, strategy question and practice feedback were reworded to match (§6). The
-  answer buttons, keys and 3-second lock have not been clicked through in a browser by Claude; the
-  user is checking the live site.
+  instructions, quiz, strategy question and practice feedback were reworded to match (§6).
+  Deployed and verified: commit `433cf89`, deploy run 35113581343 (`deploy` job ran), live bundle
+  `assets/main-BdmX0si-.js` has the YES / NO question, the new practice paragraph, the YES / NO quiz
+  question and practice feedback, and no "Strongly Disagree", no order-of-operations paragraph, no
+  "one step skipped", no hidden-line code. The answer buttons, keys and 3-second lock have not been
+  clicked through in a browser by Claude; the user is checking the live site.
 
 Done 2026-09-13:
 - **Instructions and quiz** rewritten for this design (details in §6 "Frontend status"). They make
