@@ -28,9 +28,12 @@ its own repo.
 ### The task (one trial)
 A participant sees a **math expression**, a **student's step-by-step work** containing exactly one
 order-of-operations misconception, and a **belief statement** claiming the student holds a
-particular misconception. They rate on a **6-point Likert scale** (1 = Strongly Disagree, 6 =
-Strongly Agree) how well the statement explains the work, NOT whether the final answer is right.
-Scoring collapses the rating at **>= 4 = agree**.
+particular misconception. They answer **YES or NO** (the D / F keys or two
+buttons): does the statement describe what the student believes? It is about the work, NOT whether
+the final answer is right. **YES = agree.** (Since 2026-09-16, at the user's request, as in
+Experiment 2; before that a 6-point Likert scale was collapsed at >= 4. The scale was a leftover
+from an earlier design with 2-misconception items; every item here has one misconception and a
+clear answer.)
 
 ### The 6 misconceptions
 | id | meaning |
@@ -345,12 +348,22 @@ it locally.
   -> practice -> experiment -> strategy question -> feedback survey -> demographics -> save ->
   debrief -> thanks.
 - **`src/user/components/trace_judgment/TraceJudgmentView.vue`** the 24-trial task: expression, work
-  (`= step` per line), belief statement, 6-point Likert. 3-second answer lock per trial, "X of 24"
-  counter, mouse tracking for offline bot detection, and bonus scoring (see below).
-- **`src/user/components/trace_judgment/PracticeView.vue`** practice trials with feedback: after the
-  participant answers, the erroneous step(s) are highlighted amber with a short note.
+  (`= step` per line), belief statement, the question "Is this what the student believes?" and the
+  YES / NO answer (since 2026-09-16: D / F keys or the buttons; an answer records the trial and
+  moves on at once, no Submit). 3-second answer lock per trial (keys and clicks), "X of 24" counter,
+  mouse tracking for offline bot detection, and bonus scoring (see below). Recorded per trial:
+  `response` (`'yes'`/`'no'`), `response_method` (`'key'`/`'click'`/`'autofill'`), `rt`,
+  `responded_agree`, `correct_agree`, `is_correct`, `mouse`, plus the item fields.
+- **`src/user/components/trace_judgment/PracticeView.vue`** practice trials with feedback: the same
+  YES / NO answer; after answering, the chosen button stays highlighted, the erroneous step(s) are
+  highlighted amber with a short note, then the feedback paragraph and "Next practice question".
+- **`src/user/components/trace_judgment/YesNoButtons.vue`** (2026-09-16, copied from Experiment 2):
+  green YES (D) and red NO (F) buttons (small: `w-28 py-2 text-base`) with "Press D for YES or F for
+  NO" underneath; listens for the D / F keys while mounted, ignores input while `disabled`, emits
+  `answer` with `{ response, method }`. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
+  are byte-identical to Experiment 2's; keep them in step.
 - **`src/user/components/trace_judgment/StrategyQuestionView.vue`** required free-text strategy
-  question after the task.
+  question after the task (asks how they decided whether to answer YES or NO).
 - **`src/user/utils/sampleForm.js`** draws each participant's 24-trial form (design in §8, "Done").
   Python twin: **`base-task/sample_form.py`**. Both use the same seeded PRNG (mulberry32) and the
   same draw order, so a seed gives the identical form in both; checked identical (items, order,
@@ -381,31 +394,34 @@ guard with the intended status, names outside the task's 24. Fixed order, as the
 | P3 | wrong | step 1 | same_priority_rtl | sub_before_div | no chance: the problem has no subtraction |
 
 After each answer the error step is highlighted amber with a note, plus a feedback paragraph that
-explains the right answer without saying whether the participant was right. Answer keys are 1 agree
-/ 2 disagree (the user's choice).
+explains the right answer without saying whether the participant was right (it ends "the right
+answer would be YES/NO" since 2026-09-16). Answer keys are 1 YES / 2 NO (the user's choice).
 
 **Instructions and quiz (rewritten 2026-09-13, user-approved; deployed and verified: commit 57625e0,
 deploy run 34779362204, live bundle `assets/main-BQgn2sQl.js` has the new text and quiz, not the old
-quiz).** `InstructionsView.vue` covers: the task; the correct order of operations
-(brackets, then × and ÷ left to right, then + and - left to right); every student makes exactly one
-mistake; the job (agree when the mistake is the one the statement describes, disagree when it is a
-different one or the problem gives no chance to show the belief; the scale shows how sure you are);
-the bonus, in one line since 2026-09-14 at the user's request ("You can earn a bonus of up to $2.",
-the same wording as Experiment 2); 3 practice questions then 24 problems with a 3-second unlock. The user asked
-NOT to list the six beliefs with examples. Its numbers mirror `MAX_BONUS`, `UNLOCK_DELAY_MS`, the
-form size and the practice count; change them together. `quizQuestions.js`: 3 questions on one page,
-all must be right or the participant returns to the instructions: what the rating is based on, how
-many mistakes (exactly one), a different-mistake case (disagree). The no-chance / brackets question was removed at the
+quiz).** `InstructionsView.vue` (since 2026-09-16 it matches Experiment 2's text at the user's request,
+minus Experiment 2's "one step skipped", since nothing is skipped here) covers: the task; every
+student makes exactly one mistake; "Your Job. Decide whether the statement describes what the
+student believes, using their work as evidence. Answer YES when the student's mistake is the one the
+statement describes and NO otherwise."; the bonus in one line ("You can earn a bonus of up to $2.");
+and "You'll start with 3 practice questions. After each one, we highlight and explain the right
+answer. Practice trials do not count towards your bonus. Then you'll judge 24 problems. On each one,
+the answer buttons unlock after 3 seconds, so take time to read the work." Removed on 2026-09-16: the
+correct-order-of-operations paragraph, the "disagree when..." sentence, the 6-point scale and the
+"What happens next" label. The user wants this text short. The user asked NOT to list the six
+beliefs with examples. Its numbers mirror `MAX_BONUS`, `UNLOCK_DELAY_MS`, the form size and the
+practice count; change them together. `quizQuestions.js`: 3 questions on one page, all must be
+right or the participant returns to the instructions: what your answer is based on, how many
+mistakes (exactly one), a different-mistake case (NO; YES / NO options since 2026-09-16). The no-chance / brackets question was removed at the
 user's request 2026-09-14 (as in Experiment 2). The 2026-09-14 bonus and quiz changes are deployed and
 verified: commit b66dfc9, deploy run 34865350982, live bundle `assets/main-Bv_8lgFU.js` has the
 one-line bonus and no brackets question.
 
 ### Bonus
-Binary direction only: rating >= 4 counts as agree, correct if that matches `statement_correct`.
+YES counts as agree; a trial is correct if that matches `statement_correct`.
 `bonus = max(0, (accuracy - 0.5) / 0.5) x $2`, rounded to cents, recorded per trial (`is_correct`)
-and as a `traceJudgmentBonus` block in `pageData_exp`. Confidence is deliberately NOT rewarded,
-because the Likert distribution is the dependent variable and paying for extremes would distort it.
-Base pay is separate.
+and as a `traceJudgmentBonus` block in `pageData_exp`. Participants are told only "You can earn a
+bonus of up to $2." Base pay is separate.
 
 ### ⚠️ Prolific URL (a missing-params bug cost a whole batch once)
 Participants MUST arrive on `#/welcome/prolific/` with the ID params, or they are recorded
@@ -493,6 +509,12 @@ npm run upload_config                      # (re)push deploy secrets from env/*.
    and pay is prorated to it; 3 practice + 24 trials will likely take less (not yet measured).
 3. The hardest-foil exclusion (§3 item 4, §5) is kept as is; the user did not ask to change it
    (2026-09-13). Revisit only if they do.
+
+Done 2026-09-16 (user's request, mirroring Experiment 2):
+- **YES / NO answers** with the D / F keys replace the 6-point scale in practice and task; the
+  instructions, quiz, strategy question and practice feedback were reworded to match (§6). The
+  answer buttons, keys and 3-second lock have not been clicked through in a browser by Claude; the
+  user is checking the live site.
 
 Done 2026-09-13:
 - **Instructions and quiz** rewritten for this design (details in §6 "Frontend status"). They make

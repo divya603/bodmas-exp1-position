@@ -6,21 +6,13 @@ import { ConstrainedTaskWindow } from '@/uikit/layouts'
 import pool from '@/user/data/stimulus_pool.json'
 import { sampleForm, randomSeed } from '@/user/utils/sampleForm'
 import { useMouseTracking } from '@/user/utils/useMouseTracking'
+import YesNoButtons from '@/user/components/trace_judgment/YesNoButtons.vue'
 
 const api = useViewAPI()
 
 // records a sampled mouse path per trial for offline bot detection (bots tend
 // to not move the cursor or move in perfectly straight lines)
 const mouse = useMouseTracking()
-
-const LIKERT = [
-  { value: 1, label: 'Strongly Disagree' },
-  { value: 2, label: 'Disagree' },
-  { value: 3, label: 'Somewhat Disagree' },
-  { value: 4, label: 'Somewhat Agree' },
-  { value: 5, label: 'Agree' },
-  { value: 6, label: 'Strongly Agree' },
-]
 
 // draw this participant's 24-item form once, then persist the seed so a
 // page reload mid-experiment doesn't resample a different form
@@ -33,20 +25,18 @@ const trials = api.steps.append(form.map((item) => ({ ...item })))
 trials.append([{ id: 'summary' }])
 
 // ── bonus scoring ───────────────────────────────────────────────────
-// Collapse the 6-point Likert to a binary agree/disagree judgment (>= 4 =
-// agree) and score each trial against the item's ground-truth direction
+// The answer is YES or NO (since 2026-09-16; a 6-point scale before). YES =
+// agree. Each trial is scored against the item's ground-truth direction
 // (statement_correct). The performance bonus is rescaled so chance (50%)
-// earns $0 and perfect earns MAX_BONUS. We score only the direction, never
-// confidence magnitude, so the bonus can't push participants toward the
-// extremes of the scale and distort the Likert data we care about.
+// earns $0 and perfect earns MAX_BONUS.
 const MAX_BONUS = 2.0
 const CHANCE = 0.5
 
 if (!api.persist.isDefined('nScored')) api.persist.nScored = 0
 if (!api.persist.isDefined('nCorrect')) api.persist.nCorrect = 0
 
-function scoreResponse(value) {
-  const respondedAgree = value >= 4
+function scoreResponse(response) {
+  const respondedAgree = response === 'yes'
   const correctAgree = api.stepData.statement_correct === true
   const isCorrect = respondedAgree === correctAgree
   api.stepData.responded_agree = respondedAgree
@@ -63,12 +53,10 @@ function computeBonus() {
   return { n, accuracy, bonus }
 }
 
-const selected = ref(null)
-
 // ── read-before-answer lock ─────────────────────────────────────────
-// Disable the response options for the first UNLOCK_DELAY_MS of each trial so
-// participants actually read the expression, trace, and belief statement
-// before rating. Re-arms on every new trial.
+// Ignore answers (buttons and keys) for the first UNLOCK_DELAY_MS of each trial
+// so participants actually read the expression, work, and belief statement
+// before answering. Re-arms on every new trial.
 const UNLOCK_DELAY_MS = 3000
 const locked = ref(false)
 const remaining = ref(0)
@@ -120,19 +108,16 @@ if (!api.isTimerStarted()) {
 }
 mouse.start() // begin tracking for the first trial
 
-function selectResponse(value) {
-  if (locked.value) return
-  selected.value = value
-}
-
-function submit() {
-  if (selected.value === null) return
-  api.stepData.response = selected.value
-  scoreResponse(selected.value)
+// A YES / NO answer (D / F key or a click) records the trial and moves on.
+function onAnswer({ response, method }) {
+  if (locked.value || api.path[0] === 'summary') return
+  locked.value = true // no second answer before the next trial's lock starts
+  api.stepData.response = response
+  api.stepData.response_method = method
+  scoreResponse(response)
   api.stepData.rt = api.elapsedTime()
   api.stepData.mouse = mouse.getPoints()
   api.recordStep()
-  selected.value = null
   api.startTimer()
   mouse.reset() // fresh path for the next trial
   api.goNextStep()
@@ -141,9 +126,10 @@ function submit() {
 function autofill() {
   while (api.stepIndex < api.nSteps) {
     if (api.path[0] !== 'summary') {
-      const value = api.faker.rchoice([1, 2, 3, 4, 5, 6])
-      api.stepData.response = value
-      scoreResponse(value)
+      const response = api.faker.rchoice(['yes', 'no'])
+      api.stepData.response = response
+      api.stepData.response_method = 'autofill'
+      scoreResponse(response)
       api.stepData.rt = api.faker.rnorm(4000, 800)
     }
     api.recordStep()
@@ -192,36 +178,13 @@ function finish() {
         <p class="italic text-yellow-800">{{ api.stepData.belief_statement }}</p>
       </div>
 
-      <p class="font-semibold mb-3">
-        How much do you agree that this is what the student believes?
+      <p class="font-semibold mb-4">
+        Is this what the student believes?
         <span v-if="locked" class="ml-1 text-sm font-normal text-muted-foreground">
           (please read the work above: {{ remaining }}s)
         </span>
       </p>
-      <div class="grid grid-cols-6 gap-2 mb-6">
-        <button
-          v-for="opt in LIKERT"
-          :key="opt.value"
-          type="button"
-          :disabled="locked"
-          @click="selectResponse(opt.value)"
-          class="flex flex-col items-center p-2 rounded border transition-colors text-center"
-          :class="[
-            selected === opt.value ? 'border-primary bg-primary/10' : 'border-gray-300 hover:bg-gray-50',
-            locked ? 'opacity-40 cursor-not-allowed' : '',
-          ]"
-        >
-          <span
-            class="w-4 h-4 rounded-full border-2 mb-2"
-            :class="selected === opt.value ? 'border-primary bg-primary' : 'border-gray-400'"
-          />
-          <span class="text-xs">{{ opt.label }}</span>
-        </button>
-      </div>
-
-      <div class="flex justify-end">
-        <Button :disabled="selected === null || locked" @click="submit()">Submit</Button>
-      </div>
+      <YesNoButtons :disabled="locked" @answer="onAnswer" />
     </div>
 
     <div class="text-center" v-else>

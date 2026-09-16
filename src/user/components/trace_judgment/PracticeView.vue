@@ -4,27 +4,20 @@ import useViewAPI from '@/core/composables/useViewAPI'
 import { Button } from '@/uikit/components/ui/button'
 import { ConstrainedTaskWindow } from '@/uikit/layouts'
 import practiceItems from '@/user/data/practice_items.json'
+import YesNoButtons from '@/user/components/trace_judgment/YesNoButtons.vue'
 
 const api = useViewAPI()
-
-const LIKERT = [
-  { value: 1, label: 'Strongly Disagree' },
-  { value: 2, label: 'Disagree' },
-  { value: 3, label: 'Somewhat Disagree' },
-  { value: 4, label: 'Somewhat Agree' },
-  { value: 5, label: 'Agree' },
-  { value: 6, label: 'Strongly Agree' },
-]
 
 // 3 practice trials (built by base-task/practice.py), then a transition screen
 // ("Begin task") before the real task
 const trials = api.steps.append(practiceItems.map((item) => ({ ...item })))
 trials.append([{ id: 'transition' }])
 
-const selected = ref(null)
-// after a response is submitted we stay on the trial and show the explanation:
-// the erroneous step(s) highlighted in the trace plus the feedback statement.
-// The feedback never says whether the participant's own choice was right or
+// the YES / NO answer given on this trial ('yes' | 'no' | null)
+const chosen = ref(null)
+// after an answer we stay on the trial and show the explanation: the
+// erroneous step(s) highlighted in the trace plus the feedback statement.
+// The feedback never says whether the participant's own answer was right or
 // wrong; it only explains what the right answer would be.
 const feedbackShown = ref(false)
 const feedbackBox = ref(null)
@@ -69,7 +62,7 @@ watch(
   () => api.stepIndex,
   () => {
     if (api.path[0] !== 'transition') {
-      selected.value = null
+      chosen.value = null
       feedbackShown.value = false
       startLock()
     } else {
@@ -85,11 +78,6 @@ if (!api.isTimerStarted()) {
   api.startTimer()
 }
 
-function selectResponse(value) {
-  if (locked.value || feedbackShown.value) return
-  selected.value = value
-}
-
 // the trace is rendered from index 1 (index 0 is the expression itself), so
 // displayed line i corresponds to full-trace index i + 1
 function isErrorStep(displayIndex) {
@@ -101,10 +89,13 @@ function errorNote(displayIndex) {
   return e ? e.note : ''
 }
 
-function submit() {
-  if (selected.value === null || feedbackShown.value) return
-  api.stepData.response = selected.value
-  api.stepData.responded_agree = selected.value >= 4
+// A YES / NO answer (D / F key or a click) is recorded, then the feedback shows.
+function onAnswer({ response, method }) {
+  if (locked.value || feedbackShown.value) return
+  chosen.value = response
+  api.stepData.response = response
+  api.stepData.response_method = method
+  api.stepData.responded_agree = response === 'yes'
   api.stepData.correct_agree = api.stepData.statement_correct === true
   api.stepData.is_correct = api.stepData.responded_agree === api.stepData.correct_agree
   api.stepData.rt = api.elapsedTime()
@@ -126,8 +117,8 @@ function beginTask() {
 function autofill() {
   while (api.stepIndex < api.nSteps) {
     if (api.path[0] !== 'transition') {
-      const value = api.faker.rchoice([1, 2, 3, 4, 5, 6])
-      api.stepData.response = value
+      api.stepData.response = api.faker.rchoice(['yes', 'no'])
+      api.stepData.response_method = 'autofill'
       api.stepData.rt = api.faker.rnorm(4000, 800)
     }
     api.recordStep()
@@ -173,41 +164,20 @@ api.setAutofill(autofill)
         <p class="italic text-yellow-800">{{ api.stepData.belief_statement }}</p>
       </div>
 
-      <p class="font-semibold mb-3">
-        How much do you agree that this is what the student believes?
+      <p class="font-semibold mb-4">
+        Is this what the student believes?
         <span v-if="locked" class="ml-1 text-sm font-normal text-muted-foreground">
           (please read the work above: {{ remaining }}s)
         </span>
       </p>
-      <div class="grid grid-cols-6 gap-2 mb-6">
-        <button
-          v-for="opt in LIKERT"
-          :key="opt.value"
-          type="button"
-          :disabled="locked || feedbackShown"
-          @click="selectResponse(opt.value)"
-          class="flex flex-col items-center p-2 rounded border transition-colors text-center"
-          :class="[
-            selected === opt.value ? 'border-primary bg-primary/10' : 'border-gray-300',
-            locked ? 'opacity-40 cursor-not-allowed' : '',
-            !locked && !feedbackShown ? 'hover:bg-gray-50' : '',
-          ]"
-        >
-          <span
-            class="w-4 h-4 rounded-full border-2 mb-2"
-            :class="selected === opt.value ? 'border-primary bg-primary' : 'border-gray-400'"
-          />
-          <span class="text-xs">{{ opt.label }}</span>
-        </button>
-      </div>
+      <YesNoButtons :disabled="locked || feedbackShown" :chosen="chosen" @answer="onAnswer" />
 
       <div v-if="feedbackShown" ref="feedbackBox" class="border border-blue-300 bg-blue-50 rounded-lg p-4 mb-6">
         <p class="text-blue-900">{{ api.stepData.feedback }}</p>
       </div>
 
-      <div class="flex justify-end mb-4">
-        <Button v-if="!feedbackShown" :disabled="selected === null || locked" @click="submit()">Submit</Button>
-        <Button v-else @click="next()">
+      <div v-if="feedbackShown" class="flex justify-end mb-4">
+        <Button @click="next()">
           {{ api.stepIndex === practiceItems.length - 1 ? 'Continue' : 'Next practice question' }}
           <i-fa6-solid-arrow-right />
         </Button>

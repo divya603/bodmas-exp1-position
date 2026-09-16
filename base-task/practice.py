@@ -57,7 +57,7 @@ PRACTICE = [
         'feedback': (
             'The highlighted step shows the student adding 1 + 7 before doing 7 × 4. That is '
             'exactly the misconception the statement describes, so the statement explains the '
-            'work and the right answer would be to agree.'),
+            'work and the right answer would be YES.'),
     },
     {
         'id': 'P2', 'student_name': 'Sam', 'position': 3,
@@ -79,7 +79,7 @@ PRACTICE = [
             'mistake. The work even argues against it: in the next step, with 38 ÷ 2 + 40 ÷ 2, '
             'the student divided 38 ÷ 2 first, where someone who adds before dividing would have '
             'added 2 + 40. So the statement does not explain the work, and the right answer would '
-            'be to disagree.'),
+            'be NO.'),
     },
     {
         'id': 'P3', 'student_name': 'Kai', 'position': 1,
@@ -99,7 +99,7 @@ PRACTICE = [
             "The student's mistake is in the highlighted step: they worked right to left, doing "
             '3 × 5 before 6 ÷ 3. The statement says they subtract before dividing, but there is no '
             'subtraction anywhere in this problem, so that belief cannot explain anything in the '
-            'work. The right answer would be to disagree.'),
+            'work. The right answer would be NO.'),
     },
 ]
 

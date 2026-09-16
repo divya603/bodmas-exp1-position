@@ -8,8 +8,8 @@ For each item the observer sees only what a participant sees (the trace) and
 scores the probed rule under the 22 hypotheses (expert + 6 singletons +
 15 pairs) at epsilon=0. Its answer to "does this statement explain the work?"
 is the marginal probability that the student holds the named rule; the binary
-judgment collapses that at 0.5, matching how human ratings are collapsed
-(>=4 on the 1-6 scale = agree).
+judgment collapses that at 0.5, matching the participant's YES / NO answer
+(YES = agree).
 
 Refutation is not a design factor. foil_status is still
 computed and reported here, but nothing is balanced on it, so the per-status
