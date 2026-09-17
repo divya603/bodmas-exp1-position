@@ -384,8 +384,9 @@ As of 2026-09-13 `src/user/data/stimulus_pool.json` is the v5 pool (byte-identic
 2026-09-13:** commit 975c0dc, deploy run 34776824047 (the `deploy` job ran), and the live bundle
 (`assets/main-C0VuXHPj.js` at that commit) contains the v5 expression `(9 × 2 + 4) - 1 + 8 ÷ 2 + 11`
 and none of the old pool's expressions. **2026-09-17: the pool was rebuilt at 5 operators and the
-three practice items regenerated to match; NOT yet committed or deployed, update this line when
-they are.**
+three practice items regenerated to match. Deployed and verified: commit c4c995d, deploy run
+35266815945, live bundle `assets/main-Bxz5v7Hi.js`, where all 240 items show 6 lines (expression
+plus 5 steps) and no 6-operator expression survives.**
 
 **Practice items (new 2026-09-13; deployed and verified: commit 0abdf0c, deploy run 34778572392,
 live bundle `assets/main-CcKDMNvE.js` contains the new items and none of the old practice set).**
