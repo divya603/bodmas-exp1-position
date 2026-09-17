@@ -17,7 +17,7 @@ Properties of this pool the figures have to respect:
     compared between expressions.
   - Category A is a POINT MASS: all 120 items score exactly 1.000. Anything
     that tries to show its shape is drawing noise that is not there.
-  - Category B marginals take only 11 distinct values in [0, 0.333], so they are
+  - Category B marginals take only 10 distinct values in [0, 0.333], so they are
     effectively discrete. Use exact-value stems, not a KDE, which would invent
     shape between the spikes.
   - `foil_status` is recorded but NOT balanced. Never split a figure by it; the

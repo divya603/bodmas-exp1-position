@@ -11,9 +11,10 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul"
+   "add_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.444444
  },
  {
   "id": "A001",
@@ -29,7 +30,7 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A002",
@@ -43,10 +44,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.666667
+  "map_posterior": 0.25
  },
  {
   "id": "A003",
@@ -62,27 +62,10 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A004",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_mul",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.571429
- },
- {
-  "id": "A005",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -98,6 +81,22 @@
   "map_posterior": 0.25
  },
  {
+  "id": "A005",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_mul",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.2
+ },
+ {
   "id": "A006",
   "category": "A",
   "error_position": 1,
@@ -109,10 +108,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.692308
+  "map_posterior": 0.25
  },
  {
   "id": "A007",
@@ -158,10 +156,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.529412
+  "map_posterior": 0.2
  },
  {
   "id": "A010",
@@ -177,7 +174,7 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A011",
@@ -207,10 +204,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.692308
+  "map_posterior": 0.25
  },
  {
   "id": "A013",
@@ -226,7 +222,7 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.25
  },
  {
   "id": "A014",
@@ -274,7 +270,7 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A017",
@@ -290,7 +286,7 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A018",
@@ -306,7 +302,7 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A019",
@@ -338,7 +334,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "A021",
@@ -354,27 +350,10 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A022",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.473684
- },
- {
-  "id": "A023",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_div",
@@ -390,7 +369,7 @@
   "map_posterior": 0.25
  },
  {
-  "id": "A024",
+  "id": "A023",
   "category": "A",
   "error_position": 1,
   "true_misconception": "add_before_div",
@@ -404,6 +383,22 @@
    "add_before_div"
   ],
   "map_posterior": 0.333333
+ },
+ {
+  "id": "A024",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
  },
  {
   "id": "A025",
@@ -433,10 +428,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
+   "add_before_div"
   ],
-  "map_posterior": 0.705882
+  "map_posterior": 0.25
  },
  {
   "id": "A027",
@@ -450,7 +444,8 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div"
+   "add_before_div",
+   "outside_bracket_first"
   ],
   "map_posterior": 0.5
  },
@@ -468,7 +463,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "A029",
@@ -482,9 +477,10 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div"
+   "add_before_div",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.5
  },
  {
   "id": "A030",
@@ -500,7 +496,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A031",
@@ -516,7 +512,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A032",
@@ -532,7 +528,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A033",
@@ -548,7 +544,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A034",
@@ -564,7 +560,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.166667
+  "map_posterior": 0.25
  },
  {
   "id": "A035",
@@ -578,10 +574,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
+   "add_before_div"
   ],
-  "map_posterior": 0.842105
+  "map_posterior": 0.333333
  },
  {
   "id": "A036",
@@ -613,7 +608,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.25
  },
  {
   "id": "A038",
@@ -662,7 +657,7 @@
    "sub_before_mul",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.571429
+  "map_posterior": 0.642857
  },
  {
   "id": "A041",
@@ -694,7 +689,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
  },
  {
   "id": "A043",
@@ -708,10 +703,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
+   "sub_before_mul"
   ],
-  "map_posterior": 0.529412
+  "map_posterior": 0.2
  },
  {
   "id": "A044",
@@ -727,7 +721,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
  },
  {
   "id": "A045",
@@ -743,7 +737,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A046",
@@ -773,9 +767,10 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul"
+   "sub_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.4
  },
  {
   "id": "A048",
@@ -805,10 +800,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
+   "sub_before_mul"
   ],
-  "map_posterior": 0.473684
+  "map_posterior": 0.25
  },
  {
   "id": "A050",
@@ -856,7 +850,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A053",
@@ -872,7 +866,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A054",
@@ -888,7 +882,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A055",
@@ -904,7 +898,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.5
  },
  {
   "id": "A056",
@@ -968,7 +962,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 1.0
+  "map_posterior": 0.25
  },
  {
   "id": "A060",
@@ -984,7 +978,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A061",
@@ -998,9 +992,10 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "sub_before_div",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.727273
  },
  {
   "id": "A062",
@@ -1014,46 +1009,13 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div"
+   "sub_before_div",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.666667
  },
  {
   "id": "A063",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.705882
- },
- {
-  "id": "A064",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.6
- },
- {
-  "id": "A065",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_div",
@@ -1069,7 +1031,23 @@
   "map_posterior": 0.2
  },
  {
-  "id": "A066",
+  "id": "A064",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "A065",
   "category": "A",
   "error_position": 1,
   "true_misconception": "sub_before_div",
@@ -1085,6 +1063,22 @@
   "map_posterior": 0.333333
  },
  {
+  "id": "A066",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.2
+ },
+ {
   "id": "A067",
   "category": "A",
   "error_position": 1,
@@ -1096,10 +1090,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div",
-   "outside_bracket_first"
+   "sub_before_div"
   ],
-  "map_posterior": 0.529412
+  "map_posterior": 0.2
  },
  {
   "id": "A068",
@@ -1113,10 +1106,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div",
-   "outside_bracket_first"
+   "sub_before_div"
   ],
-  "map_posterior": 0.842105
+  "map_posterior": 0.25
  },
  {
   "id": "A069",
@@ -1132,7 +1124,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "A070",
@@ -1148,7 +1140,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.25
  },
  {
   "id": "A071",
@@ -1164,7 +1156,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A072",
@@ -1196,7 +1188,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
  },
  {
   "id": "A074",
@@ -1212,7 +1204,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.25
  },
  {
   "id": "A075",
@@ -1228,7 +1220,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.25
  },
  {
   "id": "A076",
@@ -1244,7 +1236,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A077",
@@ -1260,7 +1252,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A078",
@@ -1276,7 +1268,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A079",
@@ -1292,7 +1284,7 @@
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A080",
@@ -1322,47 +1314,12 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.516129
+  "map_posterior": 0.25
  },
  {
   "id": "A082",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.473684
- },
- {
-  "id": "A083",
-  "category": "A",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": null,
-  "statement_correct": true,
-  "probed_marginal": 1.0,
-  "observer_agrees": true,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.818182
- },
- {
-  "id": "A084",
   "category": "A",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
@@ -1378,6 +1335,39 @@
   "map_posterior": 0.25
  },
  {
+  "id": "A083",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "A084",
+  "category": "A",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": null,
+  "statement_correct": true,
+  "probed_marginal": 1.0,
+  "observer_agrees": true,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.6
+ },
+ {
   "id": "A085",
   "category": "A",
   "error_position": 1,
@@ -1391,7 +1381,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A086",
@@ -1408,7 +1398,7 @@
    "same_priority_rtl",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.571429
+  "map_posterior": 0.6
  },
  {
   "id": "A087",
@@ -1440,7 +1430,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A089",
@@ -1456,7 +1446,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.333333
  },
  {
   "id": "A090",
@@ -1472,7 +1462,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A091",
@@ -1488,7 +1478,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A092",
@@ -1520,7 +1510,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A094",
@@ -1534,10 +1524,9 @@
   "observer_agrees": true,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.666667
+  "map_posterior": 0.25
  },
  {
   "id": "A095",
@@ -1553,7 +1542,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A096",
@@ -1585,7 +1574,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "A098",
@@ -1601,7 +1590,7 @@
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A099",
@@ -1633,7 +1622,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "A101",
@@ -1665,7 +1654,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A103",
@@ -1681,7 +1670,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A104",
@@ -1729,7 +1718,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A107",
@@ -1745,7 +1734,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A108",
@@ -1761,7 +1750,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A109",
@@ -1777,7 +1766,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.166667
  },
  {
   "id": "A110",
@@ -1809,7 +1798,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A112",
@@ -1825,7 +1814,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "A113",
@@ -1841,7 +1830,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A114",
@@ -1857,7 +1846,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.166667
+  "map_posterior": 0.25
  },
  {
   "id": "A115",
@@ -1889,7 +1878,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A117",
@@ -1905,7 +1894,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "A118",
@@ -1921,7 +1910,7 @@
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "A119",
@@ -1947,18 +1936,51 @@
   "probed_misconception": "add_before_div",
   "foil_status": "refuted",
   "statement_correct": false,
+  "probed_marginal": 0.105263,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.473684
+ },
+ {
+  "id": "B121",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B122",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "add_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
   "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
-  "id": "B121",
+  "id": "B123",
   "category": "B",
-  "error_position": 1,
+  "error_position": 3,
   "true_misconception": "add_before_mul",
   "probed_misconception": "add_before_div",
   "foil_status": "unsupported",
@@ -1972,38 +1994,6 @@
   "map_posterior": 0.2
  },
  {
-  "id": "B122",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B123",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.25
- },
- {
   "id": "B124",
   "category": "B",
   "error_position": 1,
@@ -2011,14 +2001,14 @@
   "probed_misconception": "sub_before_mul",
   "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.125,
+  "probed_marginal": 0.071429,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul",
    "outside_bracket_first"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.642857
  },
  {
   "id": "B125",
@@ -2032,10 +2022,9 @@
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul",
-   "outside_bracket_first"
+   "add_before_mul"
   ],
-  "map_posterior": 0.727273
+  "map_posterior": 0.25
  },
  {
   "id": "B126",
@@ -2043,15 +2032,15 @@
   "error_position": 3,
   "true_misconception": "add_before_mul",
   "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.166667,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.166667
  },
  {
   "id": "B127",
@@ -2059,15 +2048,15 @@
   "error_position": 3,
   "true_misconception": "add_before_mul",
   "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B128",
@@ -2091,18 +2080,35 @@
   "error_position": 1,
   "true_misconception": "add_before_mul",
   "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.125,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_mul",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.5
+ },
+ {
+  "id": "B130",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_mul",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
-  "id": "B130",
+  "id": "B131",
   "category": "B",
   "error_position": 3,
   "true_misconception": "add_before_mul",
@@ -2118,23 +2124,24 @@
   "map_posterior": 0.2
  },
  {
-  "id": "B131",
+  "id": "B132",
   "category": "B",
-  "error_position": 3,
+  "error_position": 1,
   "true_misconception": "add_before_mul",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.111111,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul"
+   "add_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.444444
  },
  {
-  "id": "B132",
+  "id": "B133",
   "category": "B",
   "error_position": 1,
   "true_misconception": "add_before_mul",
@@ -2145,25 +2152,10 @@
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_mul"
+   "add_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B133",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_mul"
-  ],
-  "map_posterior": 0.2
+  "map_posterior": 0.5
  },
  {
   "id": "B134",
@@ -2195,7 +2187,7 @@
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B136",
@@ -2203,15 +2195,15 @@
   "error_position": 1,
   "true_misconception": "add_before_mul",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B137",
@@ -2221,13 +2213,13 @@
   "probed_misconception": "outside_bracket_first",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "B138",
@@ -2235,15 +2227,15 @@
   "error_position": 3,
   "true_misconception": "add_before_mul",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B139",
@@ -2267,16 +2259,15 @@
   "error_position": 1,
   "true_misconception": "add_before_div",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
+   "add_before_div"
   ],
-  "map_posterior": 0.529412
+  "map_posterior": 0.25
  },
  {
   "id": "B141",
@@ -2300,23 +2291,6 @@
   "error_position": 3,
   "true_misconception": "add_before_div",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.4
- },
- {
-  "id": "B143",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "add_before_mul",
   "foil_status": "unsupported",
   "statement_correct": false,
   "probed_marginal": 0.2,
@@ -2326,6 +2300,23 @@
    "add_before_div"
   ],
   "map_posterior": 0.2
+ },
+ {
+  "id": "B143",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "add_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.125,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div",
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.375
  },
  {
   "id": "B144",
@@ -2350,19 +2341,34 @@
   "error_position": 1,
   "true_misconception": "add_before_div",
   "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.032258,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
+   "add_before_div"
   ],
-  "map_posterior": 0.870968
+  "map_posterior": 0.2
  },
  {
   "id": "B146",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.333333,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.333333
+ },
+ {
+  "id": "B147",
   "category": "B",
   "error_position": 3,
   "true_misconception": "add_before_div",
@@ -2378,40 +2384,7 @@
   "map_posterior": 0.2
  },
  {
-  "id": "B147",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
   "id": "B148",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.083333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.666667
- },
- {
-  "id": "B149",
   "category": "B",
   "error_position": 1,
   "true_misconception": "add_before_div",
@@ -2427,14 +2400,30 @@
   "map_posterior": 0.25
  },
  {
+  "id": "B149",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.25
+ },
+ {
   "id": "B150",
   "category": "B",
   "error_position": 3,
   "true_misconception": "add_before_div",
   "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -2448,22 +2437,6 @@
   "error_position": 3,
   "true_misconception": "add_before_div",
   "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "add_before_div"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B152",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "add_before_div",
-  "probed_misconception": "same_priority_rtl",
   "foil_status": "refuted",
   "statement_correct": false,
   "probed_marginal": 0.0,
@@ -2472,7 +2445,23 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B152",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "add_before_div",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "add_before_div"
+  ],
+  "map_posterior": 0.2
  },
  {
   "id": "B153",
@@ -2488,7 +2477,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B154",
@@ -2520,7 +2509,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B156",
@@ -2528,15 +2517,15 @@
   "error_position": 1,
   "true_misconception": "add_before_div",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B157",
@@ -2552,7 +2541,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "B158",
@@ -2568,7 +2557,7 @@
   "map_profile": [
    "add_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B159",
@@ -2608,15 +2597,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.2,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "B162",
@@ -2632,7 +2621,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B163",
@@ -2648,7 +2637,7 @@
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.5
+  "map_posterior": 0.333333
  },
  {
   "id": "B164",
@@ -2656,15 +2645,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B165",
@@ -2672,16 +2661,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.083333,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
+   "sub_before_mul"
   ],
-  "map_posterior": 0.75
+  "map_posterior": 0.2
  },
  {
   "id": "B166",
@@ -2705,9 +2693,9 @@
   "error_position": 3,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -2721,16 +2709,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.1,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
+   "sub_before_mul"
   ],
-  "map_posterior": 0.6
+  "map_posterior": 0.2
  },
  {
   "id": "B169",
@@ -2740,14 +2727,13 @@
   "probed_misconception": "sub_before_div",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.2,
+  "probed_marginal": 0.333333,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul",
-   "outside_bracket_first"
+   "sub_before_mul"
   ],
-  "map_posterior": 0.4
+  "map_posterior": 0.333333
  },
  {
   "id": "B170",
@@ -2757,13 +2743,13 @@
   "probed_misconception": "sub_before_div",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.2,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "B171",
@@ -2773,13 +2759,13 @@
   "probed_misconception": "sub_before_div",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.333333,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B172",
@@ -2787,15 +2773,16 @@
   "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.071429,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_mul"
+   "sub_before_mul",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.642857
  },
  {
   "id": "B173",
@@ -2803,34 +2790,18 @@
   "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.166667,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.166667
  },
  {
   "id": "B174",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "sub_before_mul",
-  "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_mul"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B175",
   "category": "B",
   "error_position": 3,
   "true_misconception": "sub_before_mul",
@@ -2844,6 +2815,22 @@
    "sub_before_mul"
   ],
   "map_posterior": 0.333333
+ },
+ {
+  "id": "B175",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "sub_before_mul",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_mul"
+  ],
+  "map_posterior": 0.25
  },
  {
   "id": "B176",
@@ -2867,15 +2854,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B178",
@@ -2883,9 +2870,9 @@
   "error_position": 3,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.333333,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -2899,15 +2886,15 @@
   "error_position": 3,
   "true_misconception": "sub_before_mul",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_mul"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B180",
@@ -2915,15 +2902,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_div",
   "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B181",
@@ -2931,9 +2918,9 @@
   "error_position": 1,
   "true_misconception": "sub_before_div",
   "probed_misconception": "add_before_mul",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -2963,9 +2950,9 @@
   "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.333333,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -2997,13 +2984,13 @@
   "probed_misconception": "add_before_div",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B186",
@@ -3027,15 +3014,15 @@
   "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B188",
@@ -3045,22 +3032,6 @@
   "probed_misconception": "sub_before_mul",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.2,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "sub_before_div"
-  ],
-  "map_posterior": 0.2
- },
- {
-  "id": "B189",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "sub_before_div",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
-  "statement_correct": false,
   "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
@@ -3068,6 +3039,22 @@
    "sub_before_div"
   ],
   "map_posterior": 0.25
+ },
+ {
+  "id": "B189",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "sub_before_div",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "sub_before_div"
+  ],
+  "map_posterior": 0.333333
  },
  {
   "id": "B190",
@@ -3093,13 +3080,13 @@
   "probed_misconception": "sub_before_mul",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.2
  },
  {
   "id": "B192",
@@ -3107,16 +3094,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_div",
   "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.105263,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "sub_before_div",
-   "outside_bracket_first"
+   "sub_before_div"
   ],
-  "map_posterior": 0.473684
+  "map_posterior": 0.25
  },
  {
   "id": "B193",
@@ -3142,13 +3128,13 @@
   "probed_misconception": "same_priority_rtl",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B195",
@@ -3156,15 +3142,15 @@
   "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "same_priority_rtl",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B196",
@@ -3188,15 +3174,15 @@
   "error_position": 1,
   "true_misconception": "sub_before_div",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B198",
@@ -3204,15 +3190,15 @@
   "error_position": 3,
   "true_misconception": "sub_before_div",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "sub_before_div"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.333333
  },
  {
   "id": "B199",
@@ -3242,10 +3228,9 @@
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.529412
+  "map_posterior": 0.333333
  },
  {
   "id": "B201",
@@ -3253,15 +3238,15 @@
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B202",
@@ -3269,9 +3254,9 @@
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3285,25 +3270,9 @@
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B204",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3312,21 +3281,36 @@
   "map_posterior": 0.2
  },
  {
+  "id": "B204",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "add_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
   "id": "B205",
   "category": "B",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.105263,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.473684
+  "map_posterior": 0.25
  },
  {
   "id": "B206",
@@ -3334,9 +3318,9 @@
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3350,15 +3334,15 @@
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "add_before_div",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B208",
@@ -3366,38 +3350,20 @@
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.111111,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
+   "same_priority_rtl"
   ],
-  "map_posterior": 0.666667
+  "map_posterior": 0.2
  },
  {
   "id": "B209",
   "category": "B",
   "error_position": 1,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "sub_before_mul",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.090909,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl",
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.727273
- },
- {
-  "id": "B210",
-  "category": "B",
-  "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "sub_before_mul",
   "foil_status": "unsupported",
@@ -3411,14 +3377,14 @@
   "map_posterior": 0.25
  },
  {
-  "id": "B211",
+  "id": "B210",
   "category": "B",
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "sub_before_mul",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.0,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3427,14 +3393,30 @@
   "map_posterior": 0.333333
  },
  {
+  "id": "B211",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "sub_before_mul",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.2
+ },
+ {
   "id": "B212",
   "category": "B",
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "sub_before_div",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3450,13 +3432,13 @@
   "probed_misconception": "sub_before_div",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "same_priority_rtl"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B214",
@@ -3464,15 +3446,16 @@
   "error_position": 3,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
+  "foil_status": "refuted",
   "statement_correct": false,
-  "probed_marginal": 0.333333,
+  "probed_marginal": 0.125,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "same_priority_rtl",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.375
  },
  {
   "id": "B215",
@@ -3486,9 +3469,10 @@
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
-   "same_priority_rtl"
+   "same_priority_rtl",
+   "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.4
  },
  {
   "id": "B216",
@@ -3512,38 +3496,6 @@
   "error_position": 1,
   "true_misconception": "same_priority_rtl",
   "probed_misconception": "outside_bracket_first",
-  "foil_status": "refuted",
-  "statement_correct": false,
-  "probed_marginal": 0.0,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B218",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "outside_bracket_first",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.333333,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "same_priority_rtl"
-  ],
-  "map_posterior": 0.333333
- },
- {
-  "id": "B219",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "same_priority_rtl",
-  "probed_misconception": "outside_bracket_first",
   "foil_status": "unsupported",
   "statement_correct": false,
   "probed_marginal": 0.25,
@@ -3553,6 +3505,38 @@
    "same_priority_rtl"
   ],
   "map_posterior": 0.25
+ },
+ {
+  "id": "B218",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "refuted",
+  "statement_correct": false,
+  "probed_marginal": 0.0,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.25
+ },
+ {
+  "id": "B219",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "same_priority_rtl",
+  "probed_misconception": "outside_bracket_first",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "same_priority_rtl"
+  ],
+  "map_posterior": 0.2
  },
  {
   "id": "B220",
@@ -3576,15 +3560,15 @@
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.166667,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.166667
  },
  {
   "id": "B222",
@@ -3592,9 +3576,9 @@
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3608,15 +3592,15 @@
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "add_before_mul",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.333333
+  "map_posterior": 0.25
  },
  {
   "id": "B224",
@@ -3640,9 +3624,9 @@
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3656,9 +3640,9 @@
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "add_before_div",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3722,13 +3706,13 @@
   "probed_misconception": "sub_before_mul",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B231",
@@ -3738,13 +3722,13 @@
   "probed_misconception": "sub_before_mul",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.2
  },
  {
   "id": "B232",
@@ -3770,13 +3754,13 @@
   "probed_misconception": "sub_before_div",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.25,
+  "probed_marginal": 0.166667,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.25
+  "map_posterior": 0.166667
  },
  {
   "id": "B234",
@@ -3784,38 +3768,6 @@
   "error_position": 3,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B235",
-  "category": "B",
-  "error_position": 3,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "sub_before_div",
-  "foil_status": "unsupported",
-  "statement_correct": false,
-  "probed_marginal": 0.25,
-  "observer_agrees": false,
-  "observer_correct": true,
-  "map_profile": [
-   "outside_bracket_first"
-  ],
-  "map_posterior": 0.25
- },
- {
-  "id": "B236",
-  "category": "B",
-  "error_position": 1,
-  "true_misconception": "outside_bracket_first",
-  "probed_misconception": "same_priority_rtl",
   "foil_status": "unsupported",
   "statement_correct": false,
   "probed_marginal": 0.2,
@@ -3827,14 +3779,46 @@
   "map_posterior": 0.2
  },
  {
+  "id": "B235",
+  "category": "B",
+  "error_position": 3,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "sub_before_div",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.2,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.2
+ },
+ {
+  "id": "B236",
+  "category": "B",
+  "error_position": 1,
+  "true_misconception": "outside_bracket_first",
+  "probed_misconception": "same_priority_rtl",
+  "foil_status": "unsupported",
+  "statement_correct": false,
+  "probed_marginal": 0.25,
+  "observer_agrees": false,
+  "observer_correct": true,
+  "map_profile": [
+   "outside_bracket_first"
+  ],
+  "map_posterior": 0.25
+ },
+ {
   "id": "B237",
   "category": "B",
   "error_position": 1,
   "true_misconception": "outside_bracket_first",
   "probed_misconception": "same_priority_rtl",
-  "foil_status": "refuted",
+  "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.0,
+  "probed_marginal": 0.2,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
@@ -3850,13 +3834,13 @@
   "probed_misconception": "same_priority_rtl",
   "foil_status": "unsupported",
   "statement_correct": false,
-  "probed_marginal": 0.2,
+  "probed_marginal": 0.25,
   "observer_agrees": false,
   "observer_correct": true,
   "map_profile": [
    "outside_bracket_first"
   ],
-  "map_posterior": 0.2
+  "map_posterior": 0.25
  },
  {
   "id": "B239",

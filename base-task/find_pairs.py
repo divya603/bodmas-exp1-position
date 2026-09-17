@@ -21,7 +21,7 @@ from learner import MISCONCEPTION_FLIPS
 from generator_constrained import generate_expression, validate_trace, error_steps
 
 IDS       = list(MISCONCEPTION_FLIPS.keys())
-N_OPS     = 6
+N_OPS     = 5
 POSITIONS = (1, 3)
 
 

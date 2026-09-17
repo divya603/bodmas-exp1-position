@@ -14,9 +14,9 @@ Companion to plot_bayes_1misc_by_rule.py, which is the transpose: that one asks
 "for rule X, present versus absent"; this one asks "for a trace containing X,
 what does the observer make of every rule at once".
 
-What it shows that no category A/B figure can: on the v5 pool, on 42 of 1200
-(trace, absent rule) combinations an ABSENT rule scores above 0.35, and on 27
-above 0.5 (max 0.871). All 27 are outside_bracket_first, the one rule that
+What it shows that no category A/B figure can: on the 5-op pool, on 20 of 1200
+(trace, absent rule) combinations an ABSENT rule scores above 0.35, and on 8
+above 0.5 (max 0.727). All 8 are outside_bracket_first, the one rule that
 removes rather than adds options, so a trace that never enters its bracket
 early reads as positive evidence FOR it. The title computes these counts from
 the pool, so it cannot drift. `pool.py: foil_options()` drops any foil above 0.35 as

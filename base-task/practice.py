@@ -2,7 +2,10 @@
 practice.py
 
 Builds the 3 practice items (src/user/data/practice_items.json) and checks them
-against the model. Design (user, 2026-09-13), shown in this fixed order:
+against the model. The items were regenerated on 2026-09-17 when the pool moved
+from 6 operators to 5; the design below is unchanged.
+
+Design (user, 2026-09-13), shown in this fixed order:
   P1  statement CORRECT, error at step 1
   P2  statement WRONG,   error at step 3; the work rules the statement out
       (the student had a chance to show it and did not)
@@ -45,59 +48,56 @@ PRACTICE = [
         'id': 'P1', 'student_name': 'Tara', 'position': 1,
         'misconception': 'add_before_mul', 'probed': 'add_before_mul',
         'trace': [
-            '1 + 7 × 4 ÷ 2 + 4 - 2 × 3',
-            '8 × 4 ÷ 2 + 4 - 2 × 3',
-            '32 ÷ 2 + 4 - 2 × 3',
-            '16 + 4 - 2 × 3',
-            '20 - 2 × 3',
-            '20 - 6',
-            '14',
+            '8 + 6 × 4 ÷ 2 + 12 ÷ 3',
+            '14 × 4 ÷ 2 + 12 ÷ 3',
+            '56 ÷ 2 + 12 ÷ 3',
+            '28 + 12 ÷ 3',
+            '28 + 4',
+            '32',
         ],
-        'note': 'the student added 1 + 7 before multiplying 7 × 4',
+        'note': 'the student added 8 + 6 before multiplying 6 × 4',
         'feedback': (
-            'The highlighted step shows the student adding 1 + 7 before doing 7 × 4. That is '
+            'The highlighted step shows the student adding 8 + 6 before doing 6 × 4. That is '
             'exactly the misconception the statement describes, so the statement explains the '
             'work and the right answer would be YES.'),
     },
     {
         'id': 'P2', 'student_name': 'Sam', 'position': 3,
-        'misconception': 'sub_before_div', 'probed': 'add_before_div', 'kind': 'refuted',
+        'misconception': 'sub_before_mul', 'probed': 'add_before_mul', 'kind': 'refuted',
         'ruled_out_at': 4,
         'trace': [
-            '7 × 6 - 4 ÷ 2 + 10 × 4 ÷ 2',
-            '42 - 4 ÷ 2 + 10 × 4 ÷ 2',
-            '42 - 4 ÷ 2 + 40 ÷ 2',
-            '38 ÷ 2 + 40 ÷ 2',
-            '19 + 40 ÷ 2',
-            '19 + 20',
-            '39',
+            '9 + 6 ÷ 3 × 6 ÷ 2 - 1',
+            '9 + 2 × 6 ÷ 2 - 1',
+            '9 + 2 × 3 - 1',
+            '9 + 2 × 2',
+            '9 + 4',
+            '13',
         ],
-        'note': 'the student subtracted 42 - 4 before dividing 4 ÷ 2',
+        'note': 'the student subtracted 3 - 1 before multiplying 2 × 3',
         'feedback': (
-            "The student's mistake is in the highlighted step: they subtracted (42 - 4) before "
-            'dividing (4 ÷ 2). The statement says they add before dividing, which is a different '
-            'mistake. The work even argues against it: in the next step, with 38 ÷ 2 + 40 ÷ 2, '
-            'the student divided 38 ÷ 2 first, where someone who adds before dividing would have '
-            'added 2 + 40. So the statement does not explain the work, and the right answer would '
-            'be NO.'),
+            "The student's mistake is in the highlighted step: they subtracted (3 - 1) before "
+            'multiplying (2 × 3). The statement says they add before multiplying, which is a '
+            'different mistake. The work even argues against it: in the next step, with '
+            '9 + 2 × 2, the student multiplied 2 × 2 first, where someone who adds before '
+            'multiplying would have added 9 + 2. So the statement does not explain the work, and '
+            'the right answer would be NO.'),
     },
     {
         'id': 'P3', 'student_name': 'Kai', 'position': 1,
         'misconception': 'same_priority_rtl', 'probed': 'sub_before_div', 'kind': 'unsupported',
         'absent_op': '-',
         'trace': [
-            '10 × 6 ÷ 3 × 5 + 2 + 5 + 11',
-            '10 × 6 ÷ 15 + 2 + 5 + 11',
-            '60 ÷ 15 + 2 + 5 + 11',
-            '4 + 2 + 5 + 11',
-            '6 + 5 + 11',
-            '11 + 11',
-            '22',
+            '6 ÷ 3 × 2 + 10 ÷ 5 + 5',
+            '6 ÷ 6 + 10 ÷ 5 + 5',
+            '1 + 10 ÷ 5 + 5',
+            '1 + 2 + 5',
+            '3 + 5',
+            '8',
         ],
-        'note': 'the student worked right to left, doing 3 × 5 before 6 ÷ 3',
+        'note': 'the student worked right to left, doing 3 × 2 before 6 ÷ 3',
         'feedback': (
             "The student's mistake is in the highlighted step: they worked right to left, doing "
-            '3 × 5 before 6 ÷ 3. The statement says they subtract before dividing, but there is no '
+            '3 × 2 before 6 ÷ 3. The statement says they subtract before dividing, but there is no '
             'subtraction anywhere in this problem, so that belief cannot explain anything in the '
             'work. The right answer would be NO.'),
     },

@@ -42,8 +42,10 @@ A foil must pass two checks on the trace it is shown with:
 student_name and belief_statement are placeholders: the frontend reassigns the
 24 names per participant (src/user/utils/sampleForm.js).
 
-N_OPS stays 6. It was forced by the matched pairs (no 5-op expression supports
-both step 1 and step 3 for outside_bracket_first); without pairs it is a choice.
+N_OPS is 5 (set in find_pairs.py), shortened from 6 on 2026-09-17 at the user's
+request. 6 was forced only by v4's matched pairs, which needed one expression to
+support both step 1 and step 3 for outside_bracket_first. Without pairs, 5 ops
+fills every cell; 4 does not, since outside_bracket_first never reaches step 3.
 """
 
 import json
