@@ -1,23 +1,26 @@
-// Lays out a student's work so that each computed value sits CENTRED under the
-// operands it replaced, instead of every line being flush left (user's request,
-// 2026-09-18: left-aligned lines make it hard to see which operation was done).
+// Lays out a student's work so that each computed value sits under the OPERATOR
+// that produced it, while every line stays compact (user, 2026-09-18: flush-left
+// lines made it hard to see which operation was done, but a strict column grid
+// left odd blanks inside the lines).
+//
+// Only the line as a whole moves. Nothing is padded inside a line:
 //
 //     2 + 3 × 4
-//   =   5   × 4        <- 5 sits under "2 + 3"; "× 4" does not move
+//   =   5 × 4        <- the 5 sits under the "+"; "× 4" just follows it
 //
-// How: the first line's tokens define the columns. On every later line the
-// tokens that did not change keep their columns, and the new value spans the
-// columns of the tokens it replaced. The views render this as one CSS grid, so
-// the columns line up across all lines.
-//
-// Column numbers are CSS grid lines and assume the grid's first column holds the
-// "=" prefix, so token columns start at 2.
+// Each line gets an `indent` in `ch` units (the width of one character in the
+// monospace font the views use), so the views only need a margin.
 
 const TOKEN = /\d+|[-+×÷()]/g
 const OPS = ['+', '-', '×', '÷']
 
-export function tokenize(line) {
-  return line.match(TOKEN) ?? []
+// [{ text, start }] for one line, `start` being the character offset.
+export function tokensWithPos(line) {
+  const out = []
+  let m
+  TOKEN.lastIndex = 0
+  while ((m = TOKEN.exec(line)) !== null) out.push({ text: m[0], start: m.index })
+  return out
 }
 
 function apply(a, op, b) {
@@ -34,73 +37,63 @@ function same(a, b) {
   return a.length === b.length && a.every((t, i) => t === b[i])
 }
 
-// Which tokens of `prev` collapsed into the one new token of `next`: inclusive
-// indices into `prev`, or null if the step is not one arithmetic operation.
-// A bracket that is reduced to a single number loses its parentheses in the same
-// step, so the range then covers them too.
-export function collapsedRange(prev, next) {
+/**
+ * Which tokens of `prev` collapsed into one token of `next`.
+ * @returns {{ newIndex: number, opIndex: number } | null}
+ *          newIndex: index of the computed value in `next`
+ *          opIndex:  index in `prev` of the operator that was applied
+ * A bracket reduced to a single number loses its parentheses in the same step,
+ * so the collapsed run then starts two tokens earlier.
+ */
+export function collapsedStep(prev, next) {
   for (let i = 1; i < prev.length - 1; i++) {
     if (!OPS.includes(prev[i])) continue
     if (!/^\d+$/.test(prev[i - 1]) || !/^\d+$/.test(prev[i + 1])) continue
     const v = apply(prev[i - 1], prev[i], prev[i + 1])
     if (v === null) continue
     const cand = [...prev.slice(0, i - 1), String(v), ...prev.slice(i + 2)]
-    if (same(cand, next)) return { start: i - 1, end: i + 1 }
+    if (same(cand, next)) return { newIndex: i - 1, opIndex: i }
     const j = i - 1
     if (cand[j - 1] === '(' && cand[j + 1] === ')') {
       const dropped = [...cand.slice(0, j - 1), cand[j], ...cand.slice(j + 2)]
-      if (same(dropped, next)) return { start: i - 2, end: i + 2 }
+      if (same(dropped, next)) return { newIndex: i - 2, opIndex: i }
     }
   }
   return null
 }
 
-// Parentheses share a cell with what they enclose, so a bracket reads as
-// "(8 ÷ 4)" rather than being spaced out as "( 8 ÷ 4 )".
-function tightenParens(row) {
-  const out = []
-  for (const cell of row) {
-    const last = out[out.length - 1]
-    if (cell.text === ')' && last) {
-      out[out.length - 1] = { text: last.text + ')', colStart: last.colStart, colEnd: cell.colEnd }
-    } else if (last && last.text.endsWith('(')) {
-      out[out.length - 1] = { text: last.text + cell.text, colStart: last.colStart, colEnd: cell.colEnd }
-    } else {
-      out.push({ ...cell })
-    }
-  }
-  return out
-}
-
 /**
  * @param {string[]} trace lines, starting with the expression itself
- * @returns {{nCols: number, rows: {text: string, colStart: number, colEnd: number}[][]} | null}
- *          null if any step cannot be read as a single operation, in which case
- *          the caller should fall back to plain left-aligned lines.
+ * @returns {{ lines: {text: string, indent: number}[] } | null}
+ *          null if any step is not a single arithmetic operation, in which case
+ *          the caller should fall back to plain flush-left lines.
  */
 export function layoutTrace(trace) {
   if (!Array.isArray(trace) || trace.length === 0) return null
-  const first = tokenize(trace[0])
-  if (first.length === 0) return null
 
-  let spans = first.map((_, i) => [i + 2, i + 3])
-  const rows = [tightenParens(first.map((text, i) => ({ text, colStart: spans[i][0], colEnd: spans[i][1] })))]
-  let prev = first
+  const indents = [0]
+  let prevLine = trace[0]
+  let prevTokens = tokensWithPos(prevLine)
 
   for (let k = 1; k < trace.length; k++) {
-    const next = tokenize(trace[k])
-    const range = collapsedRange(prev, next)
-    if (!range) return null
-    if (next.length !== prev.length - (range.end - range.start)) return null
-    const merged = [spans[range.start][0], spans[range.end][1]]
-    const shift = range.end - range.start
-    const nextSpans = next.map((_, i) =>
-      i < range.start ? spans[i] : i === range.start ? merged : spans[i + shift]
+    const nextLine = trace[k]
+    const nextTokens = tokensWithPos(nextLine)
+    const step = collapsedStep(
+      prevTokens.map((t) => t.text),
+      nextTokens.map((t) => t.text)
     )
-    rows.push(tightenParens(next.map((text, i) => ({ text, colStart: nextSpans[i][0], colEnd: nextSpans[i][1] }))))
-    prev = next
-    spans = nextSpans
+    if (!step) return null
+    const op = prevTokens[step.opIndex]
+    const value = nextTokens[step.newIndex]
+    if (!op || !value) return null
+    const opCentre = op.start + op.text.length / 2
+    const valueCentre = value.start + value.text.length / 2
+    indents.push(indents[k - 1] + opCentre - valueCentre)
+    prevLine = nextLine
+    prevTokens = nextTokens
   }
 
-  return { nCols: first.length, rows }
+  // shift the whole block so nothing hangs off the left edge
+  const lift = Math.min(...indents)
+  return { lines: trace.map((text, i) => ({ text, indent: indents[i] - lift })) }
 }

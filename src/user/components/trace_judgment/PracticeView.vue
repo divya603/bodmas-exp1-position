@@ -9,10 +9,13 @@ import YesNoButtons from '@/user/components/trace_judgment/YesNoButtons.vue'
 
 const api = useViewAPI()
 
-// column layout for the work: each value centred under the operands it replaced
-// (null on the transition step, or if a step is not one operation, which falls
-// back to plain left-aligned lines)
-const layout = computed(() => layoutTrace(api.stepData?.trace || []))
+// the work, laid out so each computed value sits under the operator that
+// produced it (flush left if a step is not a single operation, or on the
+// transition step where there is no trace)
+const lines = computed(() => {
+  const trace = api.stepData?.trace || []
+  return layoutTrace(trace)?.lines ?? trace.map((text) => ({ text, indent: 0 }))
+})
 
 // 3 practice trials (built by base-task/practice.py), then a transition screen
 // ("Begin task") before the real task
@@ -153,53 +156,26 @@ api.setAutofill(autofill)
       <p class="text-muted-foreground mb-2">
         Here is the final answer {{ api.stepData.student_name }} produced, along with their work:
       </p>
-      <!-- Each computed value sits centred under the operands it replaced (see
-           utils/traceLayout.js). Row 0 is the expression itself, with no "=".
-           An error step gets an amber band across its whole row plus the note. -->
-      <div class="font-mono text-base mb-5">
-        <div
-          v-if="layout"
-          class="grid gap-x-2 gap-y-1 w-max"
-          :style="{ gridTemplateColumns: `auto repeat(${layout.nCols}, auto) auto` }"
-        >
-          <template v-for="(row, r) in layout.rows" :key="r">
-            <span
-              v-if="r > 0 && isErrorStep(r - 1)"
-              class="rounded bg-amber-200"
-              :style="{ gridRow: r + 1, gridColumn: '1 / -1' }"
-            />
-            <span class="text-muted-foreground pr-1" :style="{ gridRow: r + 1, gridColumn: 1 }">
-              {{ r === 0 ? '' : '=' }}
-            </span>
-            <span
-              v-for="(cell, c) in row"
-              :key="c"
-              class="text-center"
-              :style="{ gridRow: r + 1, gridColumn: `${cell.colStart} / ${cell.colEnd}` }"
-            >
-              {{ cell.text }}
-            </span>
-            <span
-              v-if="r > 0 && isErrorStep(r - 1)"
-              class="pl-3 text-sm italic text-amber-800 font-sans whitespace-nowrap"
-              :style="{ gridRow: r + 1, gridColumn: layout.nCols + 2 }"
-            >
-              &larr; {{ errorNote(r - 1) }}
-            </span>
-          </template>
-        </div>
-        <div v-else class="space-y-1">
-          <p
-            v-for="(step, i) in (api.stepData.trace || []).slice(1)"
-            :key="i"
+      <!-- Each computed value sits under the operator that produced it; only the
+           line as a whole moves (see utils/traceLayout.js). Line 0 is the
+           expression itself, with no "=". An error step is highlighted amber
+           with its note beside it. -->
+      <div class="font-mono text-base mb-5 space-y-1">
+        <div v-for="(line, i) in lines" :key="i" class="flex items-start">
+          <span class="text-muted-foreground w-5 shrink-0">{{ i === 0 ? '' : '=' }}</span>
+          <span
             class="rounded px-1 -mx-1 transition-colors"
-            :class="isErrorStep(i) ? 'bg-amber-200' : ''"
+            :class="i > 0 && isErrorStep(i - 1) ? 'bg-amber-200' : ''"
+            :style="{ marginLeft: line.indent + 'ch' }"
           >
-            = {{ step }}
-            <span v-if="isErrorStep(i)" class="ml-2 text-sm italic text-amber-800 font-sans">
-              &larr; {{ errorNote(i) }}
-            </span>
-          </p>
+            {{ line.text }}
+          </span>
+          <span
+            v-if="i > 0 && isErrorStep(i - 1)"
+            class="ml-3 text-sm italic text-amber-800 font-sans whitespace-nowrap"
+          >
+            &larr; {{ errorNote(i - 1) }}
+          </span>
         </div>
       </div>
 

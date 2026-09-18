@@ -371,22 +371,22 @@ it locally.
   no click handler, `pointer-events-none` and `aria-hidden`, so a mouse cannot answer. If a
   participant reports being unable to answer, check their keyboard first.
 - **`src/user/utils/traceLayout.js`** (2026-09-18, the user's professor asked for it): lays the work
-  out so each computed value is CENTRED under the operands it replaced, instead of every line being
-  flush left, which made it hard to see which operation was done. The expression's tokens define the
-  columns; untouched tokens keep their column; the new value spans the columns it replaced;
-  parentheses share a cell with their contents. `layoutTrace(trace)` returns `{nCols, rows}` of
-  cells with CSS grid-line numbers (column 1 is the "=" prefix), or **null** if a step is not a
-  single arithmetic operation, in which case both views fall back to plain left-aligned lines.
-  Verified 2026-09-18: a layout is produced for all 240 pool items and all 3 practice items. Both
-  views render it as ONE grid per item, so the columns line up across lines, and the work block now
-  starts with the expression itself on a row with no "=". In practice, an error step is an amber
-  band across the whole row with the note to its right.
-  Both 2026-09-18 changes (keyboard-only answering and this layout) are deployed and verified:
-  commit 0a3ce1b, deploy run 35384161251, live bundle `assets/main-qy6RzIp1.js` has the
-  keyboard-only caption, the "cannot be clicked" sentence, the layout code, and no click handler.
-  Not yet applied to Experiments 2 and 3, which still share the older `YesNoButtons.vue`; the
-  hidden-step design would also need care, since a hidden line breaks the step-to-step mapping and
-  would fall back to flush-left lines. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
+  flush-left lines made it hard to see which operation was done. `layoutTrace(trace)` gives each
+  line an `indent` in `ch` units so the computed value sits under the OPERATOR that produced it,
+  while every line stays compact: only the line as a whole moves, nothing is padded inside a line.
+  It returns `{lines: [{text, indent}]}`, or **null** if a step is not a single arithmetic
+  operation, in which case both views fall back to flush-left lines. Verified 2026-09-18: a layout
+  is produced for all 240 pool items and all 3 practice items, and indents run 0 to 14 ch (the
+  largest drift is item B152). The work block starts with the expression itself on a line with no
+  "=", which is what the first step lines up against. In practice an error step is highlighted amber
+  with its note beside it.
+  ⚠️ **The first attempt (commit 0a3ce1b) put every token on a strict CSS grid and centred each
+  value over the operands it replaced. The user rejected it the same day: the fixed columns left odd
+  blanks inside the lines.** Do not reintroduce a rigid grid.
+  Keyboard-only answering shipped in that same commit 0a3ce1b (deploy run 35384161251) and is live.
+  Neither change is applied to Experiments 2 and 3, which also still have the clickable
+  `YesNoButtons.vue`; the hidden-step design needs care, since a hidden line breaks the
+  step-to-step mapping and would fall back to flush-left lines. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
   are byte-identical to Experiment 2's and to Experiment 3's (`divya603/bodmas-exp3-teaching`, seeded
   from Experiment 2 on 2026-09-16); when the user changes one, ask whether the others should follow.
 - **`src/user/components/trace_judgment/StrategyQuestionView.vue`** required free-text strategy
