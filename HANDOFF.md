@@ -380,7 +380,13 @@ it locally.
   Verified 2026-09-18: a layout is produced for all 240 pool items and all 3 practice items. Both
   views render it as ONE grid per item, so the columns line up across lines, and the work block now
   starts with the expression itself on a row with no "=". In practice, an error step is an amber
-  band across the whole row with the note to its right. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
+  band across the whole row with the note to its right.
+  Both 2026-09-18 changes (keyboard-only answering and this layout) are deployed and verified:
+  commit 0a3ce1b, deploy run 35384161251, live bundle `assets/main-qy6RzIp1.js` has the
+  keyboard-only caption, the "cannot be clicked" sentence, the layout code, and no click handler.
+  Not yet applied to Experiments 2 and 3, which still share the older `YesNoButtons.vue`; the
+  hidden-step design would also need care, since a hidden line breaks the step-to-step mapping and
+  would fall back to flush-left lines. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
   are byte-identical to Experiment 2's and to Experiment 3's (`divya603/bodmas-exp3-teaching`, seeded
   from Experiment 2 on 2026-09-16); when the user changes one, ask whether the others should follow.
 - **`src/user/components/trace_judgment/StrategyQuestionView.vue`** required free-text strategy
