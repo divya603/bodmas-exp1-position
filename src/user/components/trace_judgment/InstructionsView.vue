@@ -45,7 +45,9 @@ function finish() {
       <p class="text-left text-lg mb-4">
         <strong>Your Job.</strong> Decide whether the statement describes what the student believes, using their work
         as evidence. Answer <strong>YES</strong> when the student's mistake is the one the statement describes and
-        <strong>NO</strong> otherwise.
+        <strong>NO</strong> otherwise. You answer with the keyboard: press <strong>D</strong> for YES or
+        <strong>F</strong> for NO. The coloured YES and NO boxes on the screen show you which key is which; they are
+        not buttons and cannot be clicked.
       </p>
 
       <p class="text-left text-lg mb-4"><strong>Bonus.</strong> You can earn a bonus of up to $2.</p>
@@ -53,7 +55,7 @@ function finish() {
       <p class="text-left text-lg mb-4">
         You'll start with <strong>3 practice questions</strong>. After each one, we highlight and explain the right
         answer. Practice trials do not count towards your bonus. Then you'll judge <strong>24 problems</strong>. On
-        each one, the answer buttons unlock after 3 seconds, so take time to read the work.
+        each one, the answer keys unlock after 3 seconds, so take time to read the work.
       </p>
 
       <hr class="border-gray-300 my-4" />

@@ -1,14 +1,20 @@
 <script setup>
-import { ref, watch, onBeforeUnmount } from 'vue'
+import { ref, watch, computed, onBeforeUnmount } from 'vue'
 import useViewAPI from '@/core/composables/useViewAPI'
 import { Button } from '@/uikit/components/ui/button'
 import { ConstrainedTaskWindow } from '@/uikit/layouts'
 import pool from '@/user/data/stimulus_pool.json'
 import { sampleForm, randomSeed } from '@/user/utils/sampleForm'
 import { useMouseTracking } from '@/user/utils/useMouseTracking'
+import { layoutTrace } from '@/user/utils/traceLayout'
 import YesNoButtons from '@/user/components/trace_judgment/YesNoButtons.vue'
 
 const api = useViewAPI()
+
+// column layout for the work: each value centred under the operands it replaced
+// (null on the summary step, or if a step is not one operation, which falls back
+// to plain left-aligned lines)
+const layout = computed(() => layoutTrace(api.stepData?.trace || []))
 
 // records a sampled mouse path per trial for offline bot detection (bots tend
 // to not move the cursor or move in perfectly straight lines)
@@ -54,7 +60,7 @@ function computeBonus() {
 }
 
 // ── read-before-answer lock ─────────────────────────────────────────
-// Ignore answers (buttons and keys) for the first UNLOCK_DELAY_MS of each trial
+// Ignore answer keys for the first UNLOCK_DELAY_MS of each trial
 // so participants actually read the expression, work, and belief statement
 // before answering. Re-arms on every new trial.
 const UNLOCK_DELAY_MS = 3000
@@ -108,7 +114,8 @@ if (!api.isTimerStarted()) {
 }
 mouse.start() // begin tracking for the first trial
 
-// A YES / NO answer (D / F key or a click) records the trial and moves on.
+// A YES / NO answer (the D or F key; keyboard only since 2026-09-18) records the
+// trial and moves on.
 function onAnswer({ response, method }) {
   if (locked.value || api.path[0] === 'summary') return
   locked.value = true // no second answer before the next trial's lock starts
@@ -170,8 +177,31 @@ function finish() {
       <p class="text-muted-foreground mb-2">
         Here is the final answer {{ api.stepData.student_name }} produced, along with their work:
       </p>
-      <div class="font-mono text-base mb-5 space-y-1">
-        <p v-for="(step, i) in api.stepData.trace.slice(1)" :key="i">= {{ step }}</p>
+      <!-- Each computed value sits centred under the operands it replaced (see
+           utils/traceLayout.js). Row 0 is the expression itself, with no "=". -->
+      <div class="font-mono text-base mb-5">
+        <div
+          v-if="layout"
+          class="grid gap-x-2 gap-y-1 w-max"
+          :style="{ gridTemplateColumns: `auto repeat(${layout.nCols}, auto)` }"
+        >
+          <template v-for="(row, r) in layout.rows" :key="r">
+            <span class="text-muted-foreground pr-1" :style="{ gridRow: r + 1, gridColumn: 1 }">
+              {{ r === 0 ? '' : '=' }}
+            </span>
+            <span
+              v-for="(cell, c) in row"
+              :key="c"
+              class="text-center"
+              :style="{ gridRow: r + 1, gridColumn: `${cell.colStart} / ${cell.colEnd}` }"
+            >
+              {{ cell.text }}
+            </span>
+          </template>
+        </div>
+        <div v-else class="space-y-1">
+          <p v-for="(step, i) in (api.stepData.trace || []).slice(1)" :key="i">= {{ step }}</p>
+        </div>
       </div>
 
       <div class="border border-yellow-300 bg-yellow-50 rounded-lg p-4 mb-5">

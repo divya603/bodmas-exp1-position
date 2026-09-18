@@ -28,7 +28,8 @@ its own repo.
 ### The task (one trial)
 A participant sees a **math expression**, a **student's step-by-step work** containing exactly one
 order-of-operations misconception, and a **belief statement** claiming the student holds a
-particular misconception. They answer **YES or NO** (the D / F keys or two
+particular misconception. They answer **YES or NO** with the **D and F keys only** (since
+2026-09-18 the on-screen YES / NO boxes are labels showing which key is which, not clickable
 buttons): does the statement describe what the student believes? It is about the work, NOT whether
 the final answer is right. **YES = agree.** (Since 2026-09-16, at the user's request, as in
 Experiment 2; before that a 6-point Likert scale was collapsed at >= 4. The scale was a leftover
@@ -353,18 +354,33 @@ it locally.
   debrief -> thanks.
 - **`src/user/components/trace_judgment/TraceJudgmentView.vue`** the 24-trial task: expression, work
   (`= step` per line), belief statement, the question "Is this what the student believes?" and the
-  YES / NO answer (since 2026-09-16: D / F keys or the buttons; an answer records the trial and
-  moves on at once, no Submit). 3-second answer lock per trial (keys and clicks), "X of 24" counter,
+  YES / NO answer (since 2026-09-16; the D / F keys only since 2026-09-18; an answer records the
+  trial and moves on at once, no Submit). 3-second answer-key lock per trial, "X of 24" counter,
   mouse tracking for offline bot detection, and bonus scoring (see below). Recorded per trial:
-  `response` (`'yes'`/`'no'`), `response_method` (`'key'`/`'click'`/`'autofill'`), `rt`,
+  `response` (`'yes'`/`'no'`), `response_method` (`'key'`/`'autofill'`; `'click'` can no longer
+  occur, but old test data may hold it), `rt`,
   `responded_agree`, `correct_agree`, `is_correct`, `mouse`, plus the item fields.
 - **`src/user/components/trace_judgment/PracticeView.vue`** practice trials with feedback: the same
-  YES / NO answer; after answering, the chosen button stays highlighted, the erroneous step(s) are
+  YES / NO answer; after answering, the chosen answer stays highlighted, the erroneous step(s) are
   highlighted amber with a short note, then the feedback paragraph and "Next practice question".
 - **`src/user/components/trace_judgment/YesNoButtons.vue`** (2026-09-16, copied from Experiment 2):
-  green YES (D) and red NO (F) buttons (small: `w-28 py-2 text-base`) with "Press D for YES or F for
-  NO" underneath; listens for the D / F keys while mounted, ignores input while `disabled`, emits
-  `answer` with `{ response, method }`. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
+  a green YES (D) and a red NO (F) box (small: `w-28 py-2 text-base`) with "Answer with the
+  keyboard: press D for YES or F for NO" underneath; listens for the D / F keys while mounted,
+  ignores input while `disabled`, emits `answer` with `{ response, method: 'key' }`.
+  **Keyboard-only since 2026-09-18 at the user's request**: the boxes are `div`s, not buttons, with
+  no click handler, `pointer-events-none` and `aria-hidden`, so a mouse cannot answer. If a
+  participant reports being unable to answer, check their keyboard first.
+- **`src/user/utils/traceLayout.js`** (2026-09-18, the user's professor asked for it): lays the work
+  out so each computed value is CENTRED under the operands it replaced, instead of every line being
+  flush left, which made it hard to see which operation was done. The expression's tokens define the
+  columns; untouched tokens keep their column; the new value spans the columns it replaced;
+  parentheses share a cell with their contents. `layoutTrace(trace)` returns `{nCols, rows}` of
+  cells with CSS grid-line numbers (column 1 is the "=" prefix), or **null** if a step is not a
+  single arithmetic operation, in which case both views fall back to plain left-aligned lines.
+  Verified 2026-09-18: a layout is produced for all 240 pool items and all 3 practice items. Both
+  views render it as ONE grid per item, so the columns line up across lines, and the work block now
+  starts with the expression itself on a row with no "=". In practice, an error step is an amber
+  band across the whole row with the note to its right. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
   are byte-identical to Experiment 2's and to Experiment 3's (`divya603/bodmas-exp3-teaching`, seeded
   from Experiment 2 on 2026-09-16); when the user changes one, ask whether the others should follow.
 - **`src/user/components/trace_judgment/StrategyQuestionView.vue`** required free-text strategy
@@ -414,7 +430,9 @@ student believes, using their work as evidence. Answer YES when the student's mi
 statement describes and NO otherwise."; the bonus in one line ("You can earn a bonus of up to $2.");
 and "You'll start with 3 practice questions. After each one, we highlight and explain the right
 answer. Practice trials do not count towards your bonus. Then you'll judge 24 problems. On each one,
-the answer buttons unlock after 3 seconds, so take time to read the work." Removed on 2026-09-16: the
+the answer keys unlock after 3 seconds, so take time to read the work." The "Your Job" paragraph also
+says, since 2026-09-18, that you answer with the keyboard (D for YES, F for NO) and that the boxes
+are not clickable. Removed on 2026-09-16: the
 correct-order-of-operations paragraph, the "disagree when..." sentence, the 6-point scale and the
 "What happens next" label. The user wants this text short. The user asked NOT to list the six
 beliefs with examples. Its numbers mirror `MAX_BONUS`, `UNLOCK_DELAY_MS`, the form size and the

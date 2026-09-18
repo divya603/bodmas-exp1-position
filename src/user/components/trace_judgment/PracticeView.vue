@@ -1,12 +1,18 @@
 <script setup>
-import { ref, watch, nextTick, onBeforeUnmount } from 'vue'
+import { ref, watch, computed, nextTick, onBeforeUnmount } from 'vue'
 import useViewAPI from '@/core/composables/useViewAPI'
 import { Button } from '@/uikit/components/ui/button'
 import { ConstrainedTaskWindow } from '@/uikit/layouts'
 import practiceItems from '@/user/data/practice_items.json'
+import { layoutTrace } from '@/user/utils/traceLayout'
 import YesNoButtons from '@/user/components/trace_judgment/YesNoButtons.vue'
 
 const api = useViewAPI()
+
+// column layout for the work: each value centred under the operands it replaced
+// (null on the transition step, or if a step is not one operation, which falls
+// back to plain left-aligned lines)
+const layout = computed(() => layoutTrace(api.stepData?.trace || []))
 
 // 3 practice trials (built by base-task/practice.py), then a transition screen
 // ("Begin task") before the real task
@@ -89,7 +95,8 @@ function errorNote(displayIndex) {
   return e ? e.note : ''
 }
 
-// A YES / NO answer (D / F key or a click) is recorded, then the feedback shows.
+// A YES / NO answer (the D or F key; keyboard only since 2026-09-18) is
+// recorded, then the feedback shows.
 function onAnswer({ response, method }) {
   if (locked.value || feedbackShown.value) return
   chosen.value = response
@@ -146,18 +153,54 @@ api.setAutofill(autofill)
       <p class="text-muted-foreground mb-2">
         Here is the final answer {{ api.stepData.student_name }} produced, along with their work:
       </p>
-      <div class="font-mono text-base mb-5 space-y-1">
-        <p
-          v-for="(step, i) in api.stepData.trace.slice(1)"
-          :key="i"
-          class="rounded px-1 -mx-1 transition-colors"
-          :class="isErrorStep(i) ? 'bg-amber-200' : ''"
+      <!-- Each computed value sits centred under the operands it replaced (see
+           utils/traceLayout.js). Row 0 is the expression itself, with no "=".
+           An error step gets an amber band across its whole row plus the note. -->
+      <div class="font-mono text-base mb-5">
+        <div
+          v-if="layout"
+          class="grid gap-x-2 gap-y-1 w-max"
+          :style="{ gridTemplateColumns: `auto repeat(${layout.nCols}, auto) auto` }"
         >
-          = {{ step }}
-          <span v-if="isErrorStep(i)" class="ml-2 text-sm italic text-amber-800 font-sans">
-            &larr; {{ errorNote(i) }}
-          </span>
-        </p>
+          <template v-for="(row, r) in layout.rows" :key="r">
+            <span
+              v-if="r > 0 && isErrorStep(r - 1)"
+              class="rounded bg-amber-200"
+              :style="{ gridRow: r + 1, gridColumn: '1 / -1' }"
+            />
+            <span class="text-muted-foreground pr-1" :style="{ gridRow: r + 1, gridColumn: 1 }">
+              {{ r === 0 ? '' : '=' }}
+            </span>
+            <span
+              v-for="(cell, c) in row"
+              :key="c"
+              class="text-center"
+              :style="{ gridRow: r + 1, gridColumn: `${cell.colStart} / ${cell.colEnd}` }"
+            >
+              {{ cell.text }}
+            </span>
+            <span
+              v-if="r > 0 && isErrorStep(r - 1)"
+              class="pl-3 text-sm italic text-amber-800 font-sans whitespace-nowrap"
+              :style="{ gridRow: r + 1, gridColumn: layout.nCols + 2 }"
+            >
+              &larr; {{ errorNote(r - 1) }}
+            </span>
+          </template>
+        </div>
+        <div v-else class="space-y-1">
+          <p
+            v-for="(step, i) in (api.stepData.trace || []).slice(1)"
+            :key="i"
+            class="rounded px-1 -mx-1 transition-colors"
+            :class="isErrorStep(i) ? 'bg-amber-200' : ''"
+          >
+            = {{ step }}
+            <span v-if="isErrorStep(i)" class="ml-2 text-sm italic text-amber-800 font-sans">
+              &larr; {{ errorNote(i) }}
+            </span>
+          </p>
+        </div>
       </div>
 
       <div class="border border-yellow-300 bg-yellow-50 rounded-lg p-4 mb-5">
