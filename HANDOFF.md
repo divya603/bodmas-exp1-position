@@ -355,7 +355,8 @@ it locally.
 - **`src/user/components/trace_judgment/TraceJudgmentView.vue`** the 24-trial task. Since 2026-09-18
   the expression is NOT shown twice: one line reads "Here is the expression given to <name>, along
   with their work below it:", then the work block starts with the expression in bold at the same
-  size as the steps, which follow with "=". Expression, work
+  size as the steps, which follow with "=" (deployed and verified: commit a558592, deploy run
+  35392419113, live bundle `assets/main-DE-XbaQy.js`). Expression, work
   (`= step` per line), belief statement, the question "Is this what the student believes?" and the
   YES / NO answer (since 2026-09-16; the D / F keys only since 2026-09-18; an answer records the
   trial and moves on at once, no Submit). 3-second answer-key lock per trial, "X of 24" counter,
