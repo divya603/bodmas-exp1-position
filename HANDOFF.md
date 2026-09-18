@@ -383,7 +383,10 @@ it locally.
   ⚠️ **The first attempt (commit 0a3ce1b) put every token on a strict CSS grid and centred each
   value over the operands it replaced. The user rejected it the same day: the fixed columns left odd
   blanks inside the lines.** Do not reintroduce a rigid grid.
-  Keyboard-only answering shipped in that same commit 0a3ce1b (deploy run 35384161251) and is live.
+  Deployed and verified 2026-09-18: commit 96b02d3, deploy run 35391041592, live bundle
+  `assets/main-h86u-g0-.js` applies the per-line `marginLeft: indent + "ch"` in both views and no
+  longer contains the rejected grid (`gridTemplateColumns` is gone).
+  Keyboard-only answering shipped in the earlier commit 0a3ce1b (deploy run 35384161251) and is live.
   Neither change is applied to Experiments 2 and 3, which also still have the clickable
   `YesNoButtons.vue`; the hidden-step design needs care, since a hidden line breaks the
   step-to-step mapping and would fall back to flush-left lines. This file, `PracticeView.vue` and `StrategyQuestionView.vue`
