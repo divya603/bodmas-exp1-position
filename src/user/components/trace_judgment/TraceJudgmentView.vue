@@ -174,11 +174,8 @@ function finish() {
       <div class="flex justify-end mb-1">
         <span class="text-xs text-muted-foreground">{{ api.stepIndex + 1 }} of {{ form.length }}</span>
       </div>
-      <p class="text-muted-foreground mb-1">Expression given to {{ api.stepData.student_name }}:</p>
-      <p class="text-2xl font-bold mb-5 font-mono">{{ api.stepData.expression }}</p>
-
       <p class="text-muted-foreground mb-2">
-        Here is the final answer {{ api.stepData.student_name }} produced, along with their work:
+        Here is the expression given to {{ api.stepData.student_name }}, along with their work below it:
       </p>
       <!-- Each computed value sits under the operator that produced it; only the
            line as a whole moves (see utils/traceLayout.js). Line 0 is the
@@ -186,7 +183,7 @@ function finish() {
       <div class="font-mono text-base mb-5 space-y-1">
         <div v-for="(line, i) in lines" :key="i" class="flex items-start">
           <span class="text-muted-foreground w-5 shrink-0">{{ i === 0 ? '' : '=' }}</span>
-          <span :style="{ marginLeft: line.indent + 'ch' }">{{ line.text }}</span>
+          <span :class="i === 0 ? 'font-bold' : ''" :style="{ marginLeft: line.indent + 'ch' }">{{ line.text }}</span>
         </div>
       </div>
 
