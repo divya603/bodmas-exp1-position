@@ -110,6 +110,7 @@ What changes automatically because this is a new repo:
 ```
 base-task/         The model + the pool + the ideal observer (Python). See §3, §4.
 analysis-Bayesian/ Ideal-observer figures. See §5.
+analysis-human/    Human-data notebook (exp1_analysis.ipynb). See §6.
 src/               The Smile/Vue web experiment. User code in src/user/. See §6.
 scripts/           Smile deploy/data scripts.
 public/            consent-form.pdf, debrief.pdf served by the frontend.
@@ -403,8 +404,9 @@ it locally.
   same draw order, so a seed gives the identical form in both; checked identical (items, order,
   names, statements) over 500 seeds on 2026-09-13. `python3 sample_form.py` runs the 500-seed checks.
 - **`src/builtins/thanks/ThanksView.vue`** upload-progress screen + Prolific completion code
-  **`CNIEB9GV`** (in both the `prolific` and `web` blocks). ⚠️ That code belongs to the OLD study's
-  Prolific study. A new Prolific study issues a new code; replace it in both blocks before launch.
+  **`C5VD33ES`** (in both the `prolific` and `web` blocks), set 2026-09-19 for this experiment's own
+  Prolific study. It replaced the old study's `CNIEB9GV`. Any new Prolific study issues a new code;
+  replace it in both blocks before launching that study.
 - **`public/consent-form.pdf`** NYU IRB form (IRB-FY2026-11440, PI Mark Ho).
 
 ### Frontend status
@@ -485,6 +487,25 @@ Test it end to end (confirm a `prolific_id` is recorded) before launching any ba
 - [ ] Fresh bonus ledger for this experiment (see below).
 
 ### Running participants and paying them
+- **Analysis notebook: `analysis-human/exp1_analysis.ipynb`** (2026-09-18). Reads
+  `data/real-all-main-data.json`, flattens every run to one row per trial, joins the pool on item
+  id, checks each form is the balanced 24 (12 YES / 12 NO, 12 per position, 4 per misconception,
+  all answered by key), then reports accuracy by position, by misconception and by named statement,
+  hit / false-alarm / d', reaction times, the figures, and bonuses recomputed from the raw
+  responses. It exports `data/private/exp1_trials.csv` (gitignored). Commit it WITHOUT outputs:
+  outputs contain participant responses.
+  **Exclusions live at the top of the notebook.** `TEST_RUNS` holds the team's own runs; set
+  `DROP_TEST_RUNS = True` once real participants are in the file, and `LAUNCH_CUTOFF` to the launch
+  date. Recorded so far: seedID `1ca448ea-1b38-4f0f-960b-9ded32b5539e`, the user's walk-through of
+  the live site on **2026-09-18 16:52 EDT** (`recruitmentService: web`, no `prolific_id`, done, 24
+  trials, 14 correct). It confirmed the live task end to end: all 24 answered with the D / F keys,
+  the form balanced exactly, practice, strategy, survey and demographics all recorded.
+  That run took **5.3 minutes start to finish**. The advertised time was 30-40 minutes; the user set
+  it to **15 minutes** on 2026-09-19 (`estimated_time` in `design.js`, shown to participants through
+  the study preview text) and advertises 15 minutes on Prolific. Pay is prorated to that figure.
+- The raw shape: each record is `{id, data}`; `data.pageData_exp.visit_0.data` holds the 24 trials
+  then the bonus block, `data.pageData_practice.visit_0.data` the 3 practice trials, and
+  `pageData_quiz` / `_strategy` / `_feedback` / `_demograph` one entry each.
 - Pull data: `npm run getdata` prompts for data type (`testing` = your own test runs, `real` =
   participants), complete-only or all, branch (use `main`), and filename; it saves JSON under
   `data/`, typically `data/real-all-main-data.json` (participant records; each has
@@ -544,8 +565,8 @@ npm run upload_config                      # (re)push deploy secrets from env/*.
 
 1. **Before launch:** replace the Prolific completion code (§6) and work through the §6 checklist
    (IRB coverage, end-to-end Prolific URL test, fresh bonus ledger). Deploy secrets are set up (§1).
-2. **Check the advertised time with the PI.** `design.js` sets `estimated_time` to 30-40 minutes
-   and pay is prorated to it; 3 practice + 24 trials will likely take less (not yet measured).
+2. Done 2026-09-19: the advertised time is **15 minutes** (`estimated_time` in `design.js`, matching
+   what the user advertises on Prolific). The one measured run took 5.3 minutes.
 3. The hardest-foil exclusion (§3 item 4, §5) is kept as is; the user did not ask to change it
    (2026-09-13). Revisit only if they do.
 

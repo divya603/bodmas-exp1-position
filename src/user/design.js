@@ -59,7 +59,7 @@ api.setRuntimeConfig('minWriteInterval', 2000)
 api.setRuntimeConfig('autoSave', true)
 
 api.setRuntimeConfig('payrate', '$15USD/hour prorated for estimated completition time + performance related bonus')
-api.setRuntimeConfig('estimated_time', '30-40 minutes')
+api.setRuntimeConfig('estimated_time', '15 minutes')
 
 // Consent PDF
 api.setRuntimeConfig('consentPdfUrl', `${import.meta.env.BASE_URL}consent-form.pdf`)

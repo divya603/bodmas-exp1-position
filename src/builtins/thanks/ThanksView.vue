@@ -119,7 +119,7 @@ onMounted(() => {
               <Button
                 variant="default"
                 as="a"
-                href="https://app.prolific.com/submissions/complete?cc=CNIEB9GV"
+                href="https://app.prolific.com/submissions/complete?cc=C5VD33ES"
               >
                 Submit my work to Prolific
                 <i-fa6-solid-arrow-right />
@@ -394,7 +394,7 @@ onMounted(() => {
               <Button
                 variant="default"
                 as="a"
-                href="https://app.prolific.com/submissions/complete?cc=CNIEB9GV"
+                href="https://app.prolific.com/submissions/complete?cc=C5VD33ES"
               >
                 Submit my work to Prolific
                 <i-fa6-solid-arrow-right />
