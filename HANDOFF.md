@@ -405,7 +405,8 @@ it locally.
   names, statements) over 500 seeds on 2026-09-13. `python3 sample_form.py` runs the 500-seed checks.
 - **`src/builtins/thanks/ThanksView.vue`** upload-progress screen + Prolific completion code
   **`C5VD33ES`** (in both the `prolific` and `web` blocks), set 2026-09-19 for this experiment's own
-  Prolific study. It replaced the old study's `CNIEB9GV`. Any new Prolific study issues a new code;
+  Prolific study and verified live (commit 60bd7f9, deploy run 35467693351, bundle
+  `assets/main-D31uLaZd.js`: `C5VD33ES` present, `CNIEB9GV` gone). It replaced the old study's `CNIEB9GV`. Any new Prolific study issues a new code;
   replace it in both blocks before launching that study.
 - **`public/consent-form.pdf`** NYU IRB form (IRB-FY2026-11440, PI Mark Ho).
 
